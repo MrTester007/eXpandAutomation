@@ -1,0 +1,6 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Agregar etiquetas","Crear etiqueta valida","SUCCESS","2023-03-07T15:17:41.6545008-03:00[America/Montevideo]","0.0","9.3"
+"Agregar etiquetas","Crear una etiqueta utilizando caracteres invalidos","SUCCESS","2023-03-07T15:17:52.2876992-03:00[America/Montevideo]","0.0","13.85"
+"Agregar etiquetas","Crear una etiqueta utilizando caracteres vacios","SUCCESS","2023-03-07T15:18:07.6312666-03:00[America/Montevideo]","0.0","13.7"
+"Agregar etiquetas","Crear una etiqueta utilizando valores iguales al limite permitido","SUCCESS","2023-03-07T15:18:22.8804471-03:00[America/Montevideo]","0.0","10.5"
+"Agregar etiquetas","Crear una etiqueta utilizando un nombre ya en uso","SUCCESS","2023-03-07T15:18:34.6405378-03:00[America/Montevideo]","0.0","8.44"

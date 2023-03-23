@@ -1,0 +1,7 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Agregar listas","Crear una lista valida tipo simple","SUCCESS","2023-03-08T11:55:09.5982087-03:00[America/Montevideo]","0.0","24.17"
+"Agregar listas","Crear una lista de tipo simple utilizando caracteres invalidos","SUCCESS","2023-03-08T11:55:35.6553321-03:00[America/Montevideo]","0.0","15.83"
+"Agregar listas","Crear una lista de tipo simple utilizando caracteres vacios","SUCCESS","2023-03-08T11:55:53.0477223-03:00[America/Montevideo]","0.0","16.45"
+"Agregar listas","Crear una lista de tipo simple utilizando valores iguales al limite permitido","SUCCESS","2023-03-08T11:56:10.2363726-03:00[America/Montevideo]","0.0","12.55"
+"Agregar listas","Crear una lista de tipo simple utilizando un nombre ya en uso","SUCCESS","2023-03-08T11:56:24.3729796-03:00[America/Montevideo]","0.0","13.25"
+"Agregar listas","Crear una lista de tipo simple utilizando un alias ya en uso","SUCCESS","2023-03-08T11:56:39.1980558-03:00[America/Montevideo]","0.0","12.75"

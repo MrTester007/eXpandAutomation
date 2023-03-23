@@ -1,0 +1,276 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Screenshots</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="bootstrap-icons/font/bootstrap-icons.css"><!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.11.3/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.11.3/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.11.3/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/>
+<!--CHART.JS-->
+<script src="chartjs/chart.js"></script>
+<script src="chartjs/chartjs-plugin-datalabels@2.0.0"></script>
+<script src="chartjs/patternomaly.min.js"></script>
+<script>
+    // Register the plugin to all charts:
+    Chart.register(ChartDataLabels);
+</script>
+<!-- Nivo Slider -->
+<link rel="stylesheet" href="nivo-slider/3.2/nivo-slider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="nivo-slider/3.2/themes/default/default.css" type="text/css" media="screen" />
+<script src="nivo-slider/3.2/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+
+        var screenshotIndex = getUrlVars()["screenshot"];
+
+        $(window).load(function () {
+            $('#slider').nivoSlider({
+                startSlide: screenshotIndex,
+                effect: 'fade',
+                animSpeed: 200,
+                manualAdvance: true
+            });
+        });
+
+        $(window).keydown(function(e) {
+            switch(e.which) {
+                case 37:
+                    $('a.nivo-prevNav').click();
+                    break;
+                case 39:
+                    $('a.nivo-nextNav').click();
+                    break;
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">eXpand Automation</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+                <a href="index.html">Home</a>
+                > <span class="truncate-40"><a
+                    href="0685358b85619f483170bcc3b40983385359126ea736b5a5e38a72ddffc1d5a1.html">Importar Departamentos</a></span>
+                > <span class="truncate-60"><a
+                    href="ef62355f1325f2438f0cd02a211087d96a35e7342941ce9f60fc79d1944a0802.html">Importar un archivo con datos validos y pickup no-autoseleccionado </a></span>
+                > Screenshots
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="bi bi-journal-check"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="bi bi-journal-text"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="dafb266f68444cb7f2451c923d70c1428ac45470c361842b818e6daa9bcd4fa8.html"><i class="bi bi-chat-text"></i> Themes</a>
+        </li>
+        <li >
+            <a href="7ea0a5e2d679b9deeda9910ae4a9bcd3a281e0d908303a9e16e486103e98880c.html"><i class="bi bi-chat-text"></i> Capabilities</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="bi bi-chat-text"></i> Features</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 08-03-2023 11:35</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+
+    <div id="contentbody">
+        <div class="titlebar">
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td>
+                            <div>
+                                <h3 class="discreet-story-header">
+                                    <i class="fs-2 bi bi-chat-left-quote large-icon"></i>
+                                    <span class="story-header-title">Importar Departamentos </span>
+                                    <span class="badge tag-badge" style="">Feature</span>
+                                </h3>
+
+                                <div class="discreet-requirement-narrative-title">
+                                Como agente logueado en el sistema, quiero poder importar etiquetas, para facilitar la creacion de las mismas
+                                </div>
+                            </div>
+
+                        </td>
+                        <td valign="top" align="right">
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink" style="background:default;" href="120165a63d3990563660b8fbb5dbf63d2da11a2db217f140a0d2f197cf0f20f8.html">A
+                                    (tag)</a>
+                                </span>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td colspan="2" class="test-title-bar">
+                            <span class="outcome-icon"><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon fa-2x' title='SUCCESS'></i></a></span>
+                            <span class="test-case-title">
+                                <span class="success-color">Importar un archivo con datos validos y pickup no-autoseleccionado
+                                    <span class="related-issue-title"></span>
+                                </span>
+                            </span>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+
+
+    <div id="beforetable"></div>
+    <div id="contenttilttle">
+        <div class="slider-wrapper theme-default">
+            <div id="slider">
+                <img src="5dfebf6541f25dd248fd12606f2521a9d479a66182d1c435e157d0c41e18ffad.png" title=" Given Un agente que ingresa a la seccion de departamentos" width="1920"/>
+                <img src="5dfebf6541f25dd248fd12606f2521a9d479a66182d1c435e157d0c41e18ffad.png" title=" Nahuel opens the Login pom" width="1920"/>
+                <img src="5dfebf6541f25dd248fd12606f2521a9d479a66182d1c435e157d0c41e18ffad.png" title=" Nahuel enters 'nahuel.silvera' into The input for the username" width="1920"/>
+                <img src="5ce5714182138cb9959a7bb9628113cbaca55a9de994e528004299bda92dd061.png" title=" Nahuel enters 'nahuel.silvera' into The input for the username (completed)" width="1920"/>
+                <img src="5ce5714182138cb9959a7bb9628113cbaca55a9de994e528004299bda92dd061.png" title=" Nahuel enters 'abcd1234' into The input for the password" width="1920"/>
+                <img src="f3579bdd34c3c3b4e87fdd78651dc2cf0a6700626e8818f27903ab496f6ba4c5.png" title=" Nahuel enters 'abcd1234' into The input for the password (completed)" width="1920"/>
+                <img src="f3579bdd34c3c3b4e87fdd78651dc2cf0a6700626e8818f27903ab496f6ba4c5.png" title=" Nahuel clicks on The button for login" width="1920"/>
+                <img src="615bea2d4b30613006d462c3547b6283442fb3164dba20b7f246e65f3262e836.png" title=" Nahuel clicks on The button for login (completed)" width="1920"/>
+                <img src="615bea2d4b30613006d462c3547b6283442fb3164dba20b7f246e65f3262e836.png" title=" Nahuel go to the sectionDepartamentos" width="1920"/>
+                <img src="615bea2d4b30613006d462c3547b6283442fb3164dba20b7f246e65f3262e836.png" title=" Nahuel open the side menu" width="1920"/>
+                <img src="615bea2d4b30613006d462c3547b6283442fb3164dba20b7f246e65f3262e836.png" title=" Nahuel clicks on The button for access to the tools menu" width="1920"/>
+                <img src="19f92e39a6d89c706fb700dbcd34ec44a206dd595b51ed8ccad7f77fc9604a64.png" title=" Nahuel clicks on The button for access to the tools menu (completed)" width="1920"/>
+                <img src="19f92e39a6d89c706fb700dbcd34ec44a206dd595b51ed8ccad7f77fc9604a64.png" title=" Nahuel open the side menu (completed)" width="1920"/>
+                <img src="19f92e39a6d89c706fb700dbcd34ec44a206dd595b51ed8ccad7f77fc9604a64.png" title=" Nahuel enters 'Departamentos' into The search bar" width="1920"/>
+                <img src="5405ad16cb1f741fb702e8e2b2d86024a098878c0b6e86828a2b82b71d7a3c97.png" title=" Nahuel enters 'Departamentos' into The search bar (completed)" width="1920"/>
+                <img src="5405ad16cb1f741fb702e8e2b2d86024a098878c0b6e86828a2b82b71d7a3c97.png" title=" Nahuel clicks on The button for go to the Departments section" width="1920"/>
+                <img src="0f0946f89c101244f005f804b6fde4f9e26165b8454a7164290202ea336f1dce.png" title=" Nahuel clicks on The button for go to the Departments section (completed)" width="1920"/>
+                <img src="0f0946f89c101244f005f804b6fde4f9e26165b8454a7164290202ea336f1dce.png" title=" Nahuel go to the sectionDepartamentos (completed)" width="1920"/>
+                <img src="0f0946f89c101244f005f804b6fde4f9e26165b8454a7164290202ea336f1dce.png" title=" Given Un agente que ingresa a la seccion de departamentos (completed)" width="1920"/>
+                <img src="95a7e9d70fef9797e7cf5afad8016ebaa64b4546c3696ce3fd8e6fdd8bb25a1b.png" title=" When El agente realiza la importacion de un archivo con datos validos y pickup no autoseleccionado" width="1920"/>
+                <img src="95a7e9d70fef9797e7cf5afad8016ebaa64b4546c3696ce3fd8e6fdd8bb25a1b.png" title=" Nahuel import a valid departments" width="1920"/>
+                <img src="95a7e9d70fef9797e7cf5afad8016ebaa64b4546c3696ce3fd8e6fdd8bb25a1b.png" title=" Nahuel clicks on El boton para importar departamentos" width="1920"/>
+                <img src="95a7e9d70fef9797e7cf5afad8016ebaa64b4546c3696ce3fd8e6fdd8bb25a1b.png" title=" Nahuel clicks on The button to select file" width="1920"/>
+                <img src="e5cc1495d2056904acd0bc3205fe5eab8d84598380d2338310d4e8b56f6773cb.png" title=" Nahuel clicks on The button to select file (completed)" width="1920"/>
+                <img src="f09343f7e689ac738b68a5116e2ef2e1b78e649e1da3f3b7c7211b8b896b8eb3.png" title=" Nahuel clicks on El boton para confirmar la importacion del archivo" width="1920"/>
+                <img src="edd997367554889f7c5be80ef0230d8a50cbcc2510fb4134763a82c204164c81.png" title=" Nahuel clicks on El boton para confirmar la importacion del archivo (completed)" width="1920"/>
+                <img src="954569a37253070468705353755398203e5d996af71b680415b77ca2234fe922.png" title=" Nahuel enters 'C:\Users\nahuel.silvera_arbus\Desktop\Automation\base_automation\files\departments\datosValidos.csv' into The button for select the file" width="1920"/>
+                <img src="f9ba90678345ac2f7d1688d5ad44c17c51df29021371c955a4e7f42f256bb9f5.png" title=" Nahuel enters 'C:\Users\nahuel.silvera_arbus\Desktop\Automation\base_automation\files\departments\datosValidos.csv' into The button for select the file (completed)" width="1920"/>
+                <img src="f095916c1bcd5bb1eb0c18af826b69baea547dcfc88b0d3147599db0a317a8a0.png" title=" Nahuel import a valid departments (completed)" width="1920"/>
+                <img src="f095916c1bcd5bb1eb0c18af826b69baea547dcfc88b0d3147599db0a317a8a0.png" title=" When El agente realiza la importacion de un archivo con datos validos y pickup no autoseleccionado (completed)" width="1920"/>
+                <img src="3e8de9a1c9bbb54f039257ab338a7455faef635685599c95f1af4a228117bfdc.png" title=" Then La pagina realiza la importacion del archivo con datos correctos y el pickup no es autoseleccionado" width="1920"/>
+                <img src="3e8de9a1c9bbb54f039257ab338a7455faef635685599c95f1af4a228117bfdc.png" title=" Nahuel see the department imported" width="1920"/>
+                <img src="3e8de9a1c9bbb54f039257ab338a7455faef635685599c95f1af4a228117bfdc.png" title=" Nahuel clicks on The button for use all filters" width="1920"/>
+                <img src="8bf628b1f4dc2a34fb3fbb8babecf5e8b9e7d1445a9269c4dd34603c12b10b5a.png" title=" Nahuel clicks on The button for use all filters (completed)" width="1920"/>
+                <img src="3718ef086a82b901c323fc39af143bdc9204796dc248b8a2b046ec0461e92f03.png" title=" Nahuel clicks on El boton que muestra las opciones del departamento" width="1920"/>
+                <img src="96b7474f66fed8d33eda016475250e1fdff898cacea7262d5f38dd894cf347fa.png" title=" Nahuel clicks on El boton que muestra las opciones del departamento (completed)" width="1920"/>
+                <img src="96b7474f66fed8d33eda016475250e1fdff898cacea7262d5f38dd894cf347fa.png" title=" Nahuel clicks on El boton que edita los valores del departamento" width="1920"/>
+                <img src="5442bdd64fc945c3fed72d5e81c60ef84b571ce6bc9952d54258333aad5fb54d.png" title=" Nahuel clicks on El boton que edita los valores del departamento (completed)" width="1920"/>
+                <img src="43806a678fe3b8f2b13a632d655e45eb2f77e86dc2fc4cf5f9e23b14e55ada6d.png" title=" Nahuel clicks on The text box for the description" width="1920"/>
+                <img src="7b9068e9b3ddf79ea09cbbd9957fc78aec8f9d4711f7352d173339b551862f7b.png" title=" Nahuel clicks on The text box for the description (completed)" width="1920"/>
+                <img src="7b9068e9b3ddf79ea09cbbd9957fc78aec8f9d4711f7352d173339b551862f7b.png" title=" Nahuel see the department imported (completed)" width="1920"/>
+                <img src="7b9068e9b3ddf79ea09cbbd9957fc78aec8f9d4711f7352d173339b551862f7b.png" title=" Nahuel should see El label que muestra el texto de la lista desplegable with text value that is equal to: &lt;&quot;-- Ninguno --&quot;&gt;" width="1920"/>
+                <img src="7b9068e9b3ddf79ea09cbbd9957fc78aec8f9d4711f7352d173339b551862f7b.png" title=" Then La pagina realiza la importacion del archivo con datos correctos y el pickup no es autoseleccionado (completed): <span class='success-color'>SUCCESS</span>" width="1920"/>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div id="beforefooter"></div>
+<div id="bottomfooter">
+    <span class="version">Serenity BDD version 3.2.5</span>
+</div>
+</body>
+</html>

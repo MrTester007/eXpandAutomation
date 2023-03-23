@@ -1,0 +1,259 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Screenshots</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="bootstrap-icons/font/bootstrap-icons.css"><!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.11.3/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.11.3/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.11.3/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/>
+<!--CHART.JS-->
+<script src="chartjs/chart.js"></script>
+<script src="chartjs/chartjs-plugin-datalabels@2.0.0"></script>
+<script src="chartjs/patternomaly.min.js"></script>
+<script>
+    // Register the plugin to all charts:
+    Chart.register(ChartDataLabels);
+</script>
+<!-- Nivo Slider -->
+<link rel="stylesheet" href="nivo-slider/3.2/nivo-slider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="nivo-slider/3.2/themes/default/default.css" type="text/css" media="screen" />
+<script src="nivo-slider/3.2/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+
+        var screenshotIndex = getUrlVars()["screenshot"];
+
+        $(window).load(function () {
+            $('#slider').nivoSlider({
+                startSlide: screenshotIndex,
+                effect: 'fade',
+                animSpeed: 200,
+                manualAdvance: true
+            });
+        });
+
+        $(window).keydown(function(e) {
+            switch(e.which) {
+                case 37:
+                    $('a.nivo-prevNav').click();
+                    break;
+                case 39:
+                    $('a.nivo-nextNav').click();
+                    break;
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">eXpand Automation</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+                <a href="index.html">Home</a>
+                > <span class="truncate-40"><a
+                    href="9be88155184abe59de544b89a98346c945cfd1ae7c965a52964c83e57b058f63.html">Modificar Pausas</a></span>
+                > <span class="truncate-60"><a
+                    href="7c7f8ba194e76f971edc58f0d5eada77302f6c4f58bdf669d843386c31b1f758.html">Modificar pausa colocando un valor igual al limite maximo de caracteres </a></span>
+                > Screenshots
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="bi bi-journal-check"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="bi bi-journal-text"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="dafb266f68444cb7f2451c923d70c1428ac45470c361842b818e6daa9bcd4fa8.html"><i class="bi bi-chat-text"></i> Themes</a>
+        </li>
+        <li >
+            <a href="7ea0a5e2d679b9deeda9910ae4a9bcd3a281e0d908303a9e16e486103e98880c.html"><i class="bi bi-chat-text"></i> Capabilities</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="bi bi-chat-text"></i> Features</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 07-03-2023 15:38</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+
+    <div id="contentbody">
+        <div class="titlebar">
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td>
+                            <div>
+                                <h3 class="discreet-story-header">
+                                    <i class="fs-2 bi bi-chat-left-quote large-icon"></i>
+                                    <span class="story-header-title">Modificar Pausas </span>
+                                    <span class="badge tag-badge" style="">Feature</span>
+                                </h3>
+
+                                <div class="discreet-requirement-narrative-title">
+                                Como agente logueado en el sistema, quiero poder modificar las pausas, para poder cambiar la utilidad que les damos
+                                </div>
+                            </div>
+
+                        </td>
+                        <td valign="top" align="right">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td colspan="2" class="test-title-bar">
+                            <span class="outcome-icon"><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon fa-2x' title='SUCCESS'></i></a></span>
+                            <span class="test-case-title">
+                                <span class="success-color">Modificar pausa colocando un valor igual al limite maximo de caracteres
+                                    <span class="related-issue-title"></span>
+                                </span>
+                            </span>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+
+
+    <div id="beforetable"></div>
+    <div id="contenttilttle">
+        <div class="slider-wrapper theme-default">
+            <div id="slider">
+                <img src="5dfebf6541f25dd248fd12606f2521a9d479a66182d1c435e157d0c41e18ffad.png" title=" Given Un agente que ingresa a la seccion de pausas" width="1920"/>
+                <img src="5dfebf6541f25dd248fd12606f2521a9d479a66182d1c435e157d0c41e18ffad.png" title=" Nahuel opens the Login pom" width="1920"/>
+                <img src="5dfebf6541f25dd248fd12606f2521a9d479a66182d1c435e157d0c41e18ffad.png" title=" Nahuel enters 'nahuel.silvera' into The input for the username" width="1920"/>
+                <img src="b62c6f77e7d45196abab91251fa886eaebf128804d26566aacd2edf78ade189a.png" title=" Nahuel enters 'nahuel.silvera' into The input for the username (completed)" width="1920"/>
+                <img src="b62c6f77e7d45196abab91251fa886eaebf128804d26566aacd2edf78ade189a.png" title=" Nahuel enters 'abcd1234' into The input for the password" width="1920"/>
+                <img src="91a1b3fdb295820b6ab8722e40d1160b53187b81d002a82cb82f8efb94a3251e.png" title=" Nahuel enters 'abcd1234' into The input for the password (completed)" width="1920"/>
+                <img src="91a1b3fdb295820b6ab8722e40d1160b53187b81d002a82cb82f8efb94a3251e.png" title=" Nahuel clicks on The button for login" width="1920"/>
+                <img src="1473649e27cacb4130598f6c59fb017b54f930d725af2146af5eb2a35505bb85.png" title=" Nahuel clicks on The button for login (completed)" width="1920"/>
+                <img src="1473649e27cacb4130598f6c59fb017b54f930d725af2146af5eb2a35505bb85.png" title=" Nahuel go to the sectionPausas" width="1920"/>
+                <img src="1473649e27cacb4130598f6c59fb017b54f930d725af2146af5eb2a35505bb85.png" title=" Nahuel open the side menu" width="1920"/>
+                <img src="1473649e27cacb4130598f6c59fb017b54f930d725af2146af5eb2a35505bb85.png" title=" Nahuel clicks on The button for access to the tools menu" width="1920"/>
+                <img src="660f7476e27bec0a2e0944cfc9b4992341fa563cfb6441d4557bc47387a5a98d.png" title=" Nahuel clicks on The button for access to the tools menu (completed)" width="1920"/>
+                <img src="660f7476e27bec0a2e0944cfc9b4992341fa563cfb6441d4557bc47387a5a98d.png" title=" Nahuel open the side menu (completed)" width="1920"/>
+                <img src="660f7476e27bec0a2e0944cfc9b4992341fa563cfb6441d4557bc47387a5a98d.png" title=" Nahuel enters 'Pausas' into The search bar" width="1920"/>
+                <img src="be65cbe790dcc05b14162fa061e232c9efd6c54d3965672c2855015c45c032ef.png" title=" Nahuel enters 'Pausas' into The search bar (completed)" width="1920"/>
+                <img src="be65cbe790dcc05b14162fa061e232c9efd6c54d3965672c2855015c45c032ef.png" title=" Nahuel clicks on The button for go to the pauses section" width="1920"/>
+                <img src="1be2f90478e257ff573eddbf7e011789f660c81c2f3d8c45d4d7dac8306b6521.png" title=" Nahuel clicks on The button for go to the pauses section (completed)" width="1920"/>
+                <img src="1be2f90478e257ff573eddbf7e011789f660c81c2f3d8c45d4d7dac8306b6521.png" title=" Nahuel go to the sectionPausas (completed)" width="1920"/>
+                <img src="1be2f90478e257ff573eddbf7e011789f660c81c2f3d8c45d4d7dac8306b6521.png" title=" Given Un agente que ingresa a la seccion de pausas (completed)" width="1920"/>
+                <img src="267ba24ad04e58c70c1188b637c769553780696ae43125d1de77c2b9dea0b0c4.png" title=" When El agente modifica la pausa colocando un valor igual al limite maximo de caracteres" width="1920"/>
+                <img src="267ba24ad04e58c70c1188b637c769553780696ae43125d1de77c2b9dea0b0c4.png" title=" Nahuel clicks on The button to show the register options" width="1920"/>
+                <img src="267ba24ad04e58c70c1188b637c769553780696ae43125d1de77c2b9dea0b0c4.png" title=" Nahuel clicks on The button to modify the register" width="1920"/>
+                <img src="5f71ae8792f09391e9ebdea56ea4d590b3da092225034fa7f664c89d22e087d0.png" title=" Nahuel clicks on The button to modify the register (completed)" width="1920"/>
+                <img src="5f71ae8792f09391e9ebdea56ea4d590b3da092225034fa7f664c89d22e087d0.png" title=" Nahuel enters 'qZ4VBm5yemX3tUnuNvYNa0ZHnvq9RJ3LchaOsciEGw1RC9qepQVinodFeH25eGEas5iRZn0yexaV6w8zZUusevlfmHCzCI17s9QMJvZX40hnNEOxDYlVu4LBCaZxexGW' into The input to place the pause description" width="1920"/>
+                <img src="618fc2460042ecb4273e92b8e5f9f314ded65966509279531af738291d18b389.png" title=" Nahuel enters 'qZ4VBm5yemX3tUnuNvYNa0ZHnvq9RJ3LchaOsciEGw1RC9qepQVinodFeH25eGEas5iRZn0yexaV6w8zZUusevlfmHCzCI17s9QMJvZX40hnNEOxDYlVu4LBCaZxexGW' into The input to place the pause description (completed)" width="1920"/>
+                <img src="b396f90eb6d58495df3c6da43c50c52ebfc0ab304d5010982debe3e3e6043524.png" title=" Nahuel clicks on The button to finish the creation of the pause" width="1920"/>
+                <img src="7aef0e65b9d2f72b27ef5034206ddc299149f1fd266252875c3788478e8f2f2f.png" title=" Nahuel clicks on The button to finish the creation of the pause (completed)" width="1920"/>
+                <img src="7aef0e65b9d2f72b27ef5034206ddc299149f1fd266252875c3788478e8f2f2f.png" title=" When El agente modifica la pausa colocando un valor igual al limite maximo de caracteres (completed)" width="1920"/>
+                <img src="651398c4e437c55dd597e6821694abc9152ae72316c77a1eca81e97147f378b2.png" title=" Then El agente puede guardar correctamente la pausa" width="1920"/>
+                <img src="651398c4e437c55dd597e6821694abc9152ae72316c77a1eca81e97147f378b2.png" title=" Nahuel clicks on The button for use all filters" width="1920"/>
+                <img src="225960df09f72273d4bc02ca6ec15732508b054fa1f6816a089e12cf1a0b019b.png" title=" Nahuel should see The label that show the DTMF of the Pause  with text value that is equal to: &lt;&quot;0&quot;&gt;" width="1920"/>
+                <img src="225960df09f72273d4bc02ca6ec15732508b054fa1f6816a089e12cf1a0b019b.png" title=" Then El agente puede guardar correctamente la pausa (completed): <span class='success-color'>SUCCESS</span>" width="1920"/>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div id="beforefooter"></div>
+<div id="bottomfooter">
+    <span class="version">Serenity BDD version 3.2.5</span>
+</div>
+</body>
+</html>

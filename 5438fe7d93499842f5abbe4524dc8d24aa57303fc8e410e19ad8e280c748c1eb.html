@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Serenity Reports</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!--[if IE 7]>
+<!--<link rel="stylesheet" href="font-awesome/css/font-awesome-ie7.min.css">-->
+
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/v4-shims.min.css">
+
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><link rel="stylesheet" type="text/css" href="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.css">
+<link rel="stylesheet" type="text/css" href="chartist/dist/chartist.min.css">
+<script src="chartist/dist/chartist.min.js"></script>
+<script src="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.js"></script>
+<!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.20/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.20/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.10.20/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.20/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.20/datatables.bootstrap4.min.css" rel="stylesheet" />
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/><!-- JQuery-UI -->
+<link type="text/css" href="jqueryui/1.11.2-start/jquery-ui.min.css" rel="Stylesheet" />
+<script type="text/javascript" src="jqueryui/1.11.2-start/jquery-ui.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.20/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.20/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.10.20/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.20/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.20/datatables.bootstrap4.min.css" rel="stylesheet" />
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+
+
+
+
+    <script class="code" type="text/javascript">$(document).ready(function () {
+
+
+        $('.scenario-result-table').DataTable({
+
+            "order": [[0, "asc",], [3, "asc",]],
+            "pageLength": 25,
+            "language": {
+                searchPlaceholder: "Filter",
+                search: ""
+            }
+        });
+
+        // Results table
+        $('#test-results-table').DataTable({
+            "order": [[0, "asc",], [3, "asc",]],
+            "pageLength": 100,
+            "lengthMenu": [[25, 50, 100, 200, -1], [25, 50, 100, 200, "All"]]
+        });
+
+    })
+    ;
+    </script>
+</head>
+
+<body class="results-page">
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">eXpand Automation</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+
+
+    <div id="contenttop">
+        <div class="middlebg">
+        <span class="breadcrumbs"><a href="index.html">Home</a>
+                > Theme 
+                > <span
+                    class="truncate-60">Pauses (Passing Tests)</span>
+        </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="fa fa-check-square-o"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="7ea0a5e2d679b9deeda9910ae4a9bcd3a281e0d908303a9e16e486103e98880c.html"><i class="fa fa-comments-o"></i> Capabilities</a>
+        </li>
+        <li >
+            <a href="2a4631d87648e59c428d4cf0e9247f9d286e4679f436ca2ce872e931eb4dfd58.html"><i class="fa fa-comments-o"></i> Stories</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="fa fa-comments-o"></i> Features</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 08-03-2023 12:54</span>
+    <br style="clear:left"/>
+</div>
+    <div class="clr"></div>
+    <div id="beforetable"></div>
+    <div id="results-dashboard">
+        <div class="middlb">
+            <div class="table">
+
+                <h2><i class='fa fa-tags'></i> Theme: Pauses (Passing Tests)</h2>
+                <table class='overview'>
+                    <tr>
+                        <td width="375px" valign="top">
+                            <div class="test-count-summary">
+                                <div>
+
+                                22 tests
+                                    across 22 scenarios
+
+                                     |
+                                        <a href="971bcaf174a18853e94579dd5a943d754c97ee8e4a3d89a2075cc76361297247.csv" title="Download CSV"> <i class="fa fa-download"
+                                                                                        title="Download CSV"></i></a>
+
+                                    <p class="report-info"><i class="fas fa-info-circle"></i> Note that results include
+                                        data-driven scenarios containing tests ,
+                                        which may also contain results other than tests .</p>
+
+
+
+                                </div>
+                            </div>
+
+                            <div>
+                                <ul class="nav nav-tabs">
+                                    <li class="active">
+                                        <a data-toggle="tab" href="#summary"><i class="fas fa-home"></i> Summary</a>
+                                    </li>
+                                    <li>
+                                        <a data-toggle="tab" href="#tests"><i class="fas fa-tachometer-alt"></i> Test
+                                            Results</a>
+                                    </li>
+                                </ul>
+
+
+                                <div class="card border">
+                                    <div class="tab-content" id="pills-tabContent">
+                                        <div id="summary" class="tab-pane fade in active">
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                    <div class="col-sm-4">
+                                                            <div style="width:300px;"
+                                                                 class="chart-container automated-and-manual-results">
+                                                                <div class="ct-chart ct-square"></div>
+                                                            </div>
+                                                            <script>
+
+                                                                var labels = ['100%', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '];
+                                                                // Our series array that contains series objects or in this case series data arrays
+
+                                                                var series = [{meta: 'Passing tests (automated)', value: 22}, {meta: 'Passing tests (manual)', value: 0}, {meta: 'Pending tests (automated)', value: 0}, {meta: 'Pending tests (manual)', value: 0}, {meta: 'Ignored tests (automated)', value: 0}, {meta: 'Ignored tests (manual)', value: 0}, {meta: 'Skipped tests (automated)', value: 0}, {meta: 'Skipped tests (manual)', value: 0}, {meta: 'Failing tests (automated)', value: 0}, {meta: 'Failing tests (manual)', value: 0}, {meta: 'Broken tests (automated)', value: 0}, {meta: 'Broken tests (manual)', value: 0}, {meta: 'Compromised tests (automated)', value: 0}, {meta: 'Compromised tests (manual)', value: 0}];
+
+                                                                // As options we currently only set a static size of 300x200 px. We can also omit this and use aspect ratio containers
+                                                                // as you saw in the previous example
+                                                                var options = {
+                                                                    width: 350,
+                                                                    height: 300
+                                                                };
+
+
+                                                                new Chartist.Pie('.ct-chart', {
+                                                                    series: series,
+                                                                    labels: labels
+                                                                }, {
+                                                                    plugins: [Chartist.plugins.tooltip()],
+                                                                    donut: true,
+                                                                    donutWidth: 60,
+                                                                    donutSolid: true,
+                                                                    startAngle: 270,
+                                                                    showLabel: true
+                                                                }, options);
+
+
+                                                                $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+                                                                    new Chartist.Pie('.ct-chart', {
+                                                                        series: series,
+                                                                        labels: labels
+                                                                    }, {
+                                                                        plugins: [Chartist.plugins.tooltip()],
+                                                                        donut: true,
+                                                                        donutWidth: 60,
+                                                                        donutSolid: true,
+                                                                        startAngle: 270,
+                                                                        showLabel: true
+                                                                    }, options);
+                                                                });
+
+
+                                                            </script>
+                                                    </div>
+                                                    <div class="col-sm-8">
+
+                                                        <table class="table">
+                                                            <thead>
+                                                            <tr>
+                                                                <th scope="col">Scenarios</th>
+                                                                <th scope="col" colspan="2" class="automated-stats">
+                                                                    Automated
+                                                                </th>
+                                                            </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                            <tr>
+                                                                    <td class="aggregate-result-count">
+                                                                        <a href="5438fe7d93499842f5abbe4524dc8d24aa57303fc8e410e19ad8e280c748c1eb.html"><i
+                                                                                class='fa fa-check-circle-o success-icon'></i>&nbsp;Passing</a>
+                                                                    </td>
+                                                                <td class="automated-stats">22</td>
+                                                                <td class="automated-stats">100%</td>
+                                                            </tr>
+                                                            <tr>
+                                                                    <td class="aggregate-result-count"><i
+                                                                            class='fa fa-stop-circle-o pending-icon'></i>&nbsp;Pending
+                                                                    </td>
+                                                                <td class="automated-stats">0</td>
+                                                                <td class="automated-stats"> </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="aggregate-result-count"><i
+                                                                        class='fa fa-ban ignored-icon'></i>&nbsp;Ignored
+                                                                </td>
+                                                                <td class="automated-stats">0</td>
+                                                                <td class="automated-stats"> </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="aggregate-result-count"><i
+                                                                        class='fa fa-fast-forward skip-icon'></i>&nbsp;Skipped
+                                                                </td>
+                                                                <td class="automated-stats">0</td>
+                                                                <td class="automated-stats"> </td>
+                                                            </tr>
+                                                            <tr>
+                                                                            <td colspan="3"><i
+                                                                                class='fa fa-times failure-icon'></i>&nbsp;<em>Unsuccessful</em></a>
+                                                                            </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="aggregate-result-count indented-error-category">
+                                                                    <i
+                                                                            class='fa fa-times-circle failure-icon'></i>&nbsp;Failed
+                                                                </td>
+                                                                <td class="automated-stats">0</td>
+                                                                <td class="automated-stats"> </td>
+                                                            <tr>
+                                                                <td class="aggregate-result-count indented-error-category">
+                                                                    <i
+                                                                            class='fa fa-exclamation-triangle error-icon'></i>&nbsp;Broken
+                                                                </td>
+                                                                <td class="automated-stats">0</td>
+                                                                <td class="automated-stats"> </td>
+                                                            <tr>
+                                                                <td class="aggregate-result-count indented-error-category">
+                                                                    <i
+                                                                            class='fa fa-chain-broken compromised-icon'></i>&nbsp;Compromised
+                                                                </td>
+                                                                <td class="automated-stats">0</td>
+                                                                <td class="automated-stats"> </td>
+                                                            </tr>
+                                                            <tr class="summary-stats">
+                                                                <td class="aggregate-result-count">Total</td>
+                                                                <td class="automated-stats">22</td>
+                                                                <td class="automated-stats"></td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <h3>Tags</h3>
+
+                                                        <div class="card">
+                                                            <div class="card-body">
+                                                                <div>
+                                                                    <a href="1372bca04a93e95d04546a49a928da35f69d845df0ea97ffbc581869824936e5.html">
+                                                                        <span class="badge"
+                                                                              style="background-color:#1D9918; margin:1em;padding:4px;"><i
+                                                                                class="fa fa-tag"></i> Ab&nbsp;&nbsp;&nbsp;2</span>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card">
+                                                            <div class="card-body">
+                                                                <h5 class="card-title">Theme</h5>
+                                                                <div>
+                                                                    <a href="18da9e298c5c2056f3abb4d7409098906f203659831783636f891817b32a563d.html">
+                                                                        <span class="badge"
+                                                                              style="background-color:#1D9918; margin:1em;padding:4px;"><i
+                                                                                class="fa fa-tag"></i> Administration&nbsp;&nbsp;&nbsp;22</span>
+                                                                    </a>
+                                                                    <a href="8dfcad57015545678694abe99ee8c4867877546360c2fecee98142b6eb283098.html">
+                                                                        <span class="badge"
+                                                                              style="background-color:#1D9918; margin:1em;padding:4px;"><i
+                                                                                class="fa fa-tag"></i> Basic/Pauses&nbsp;&nbsp;&nbsp;22</span>
+                                                                    </a>
+                                                                    <a href="818eab0efe99b6672b492bb1927d7268483c457a833dfafed80f7478c035a111.html">
+                                                                        <span class="badge"
+                                                                              style="background-color:#1D9918; margin:1em;padding:4px;"><i
+                                                                                class="fa fa-tag"></i> Administration/Basic&nbsp;&nbsp;&nbsp;22</span>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="tests" class="tab-pane fade">
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <h3><i class="fas fa-cogs"></i> Automated Tests</h3>
+
+                                            <table class="scenario-result-table table" id="scenario-results">
+                                                <thead>
+                                                <tr>
+                                                    <th>feature</th>
+                                                    <th class="test-name-column">Scenario</th>
+                                                    <th>Steps</th>
+                                                    <th>Start Time</th>
+                                                    <th>Duration</th>
+                                                    <th>Result</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="784108634899cdb675ecf64d6a249123e4b536a3d5b00d3cf2ab88c77e0e3296.html">Agregar pausas</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="ede8e9144b6560c02753a62adb35c3752f952a5b759d2193fcfdb8e7c4a53eee.html">Crear pausa valida</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>15:36:52</td>
+                                                    <td>10s 146ms</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="784108634899cdb675ecf64d6a249123e4b536a3d5b00d3cf2ab88c77e0e3296.html">Agregar pausas</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="53ceaa2422418a18be0341bbbb807b04d8a9d8678b2b340bc9ec063a1f996bbf.html">Crear una pausa utilizando caracteres invalidos</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>15:37:03</td>
+                                                    <td>14s 183ms</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="784108634899cdb675ecf64d6a249123e4b536a3d5b00d3cf2ab88c77e0e3296.html">Agregar pausas</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="66b003d24e496fce9c359d30b4b98ecc4972604ce62909a6b9fb8e5804f6d574.html">Crear una pausa utilizando campos vacios</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>15:37:18</td>
+                                                    <td>15s 657ms</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="784108634899cdb675ecf64d6a249123e4b536a3d5b00d3cf2ab88c77e0e3296.html">Agregar pausas</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="868be363f27c5516f984ac95c764b1b2e8e8748f4b13eb326d55b465343a17fb.html">Crear una pausa utilizando valores iguales al limite permitido</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>15:37:34</td>
+                                                    <td>9s 114ms</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="784108634899cdb675ecf64d6a249123e4b536a3d5b00d3cf2ab88c77e0e3296.html">Agregar pausas</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="845d6c5d05ec50335abbfe078e9cbd5a95b347170ff890600906b4e9f9483e8b.html">Crear una pausa utilizando un dtmf ya en uso</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>15:37:45</td>
+                                                    <td>8s 298ms</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="784108634899cdb675ecf64d6a249123e4b536a3d5b00d3cf2ab88c77e0e3296.html">Agregar pausas</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="5498e75dade3c27d3a2ccc2e5a1a09cef62174e1bc5c81d7e2d669d839a33782.html">Crear una pausa utilizando una descripcion ya en uso</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>15:37:54</td>
+                                                    <td>7s 476ms</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="4592599517864724d7cce8046d29cca27a41365503d2169a4fbcc3922b6865bf.html">Eliminar pausas</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="b8411dd52f1729722e8772ea1faaad2f869167019347cf364b2718e87e3ddc99.html">Eliminar una pausa</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>15:38:03</td>
+                                                    <td>11s 387ms</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="9be88155184abe59de544b89a98346c945cfd1ae7c965a52964c83e57b058f63.html">Modificar pausas</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="1b88b0b9eebfc3106d0351e4e1c44afb431779ba0401af285adc590f80f22e68.html">Modificar pausa correctamente</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>15:38:21</td>
+                                                    <td>10s 220ms</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="9be88155184abe59de544b89a98346c945cfd1ae7c965a52964c83e57b058f63.html">Modificar pausas</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="7f125292b8408f8ef7753df9a06216119038de2dcc715f1086536b06a093f288.html">Colocar una descripcion vacia</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>15:38:32</td>
+                                                    <td>14s 143ms</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="9be88155184abe59de544b89a98346c945cfd1ae7c965a52964c83e57b058f63.html">Modificar pausas</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="d7e20665a30716dae8439f8a932dad67f8ec12704a8f769bdccc07ab0e72939e.html">Modificar pausa dejando el mismo valor que ya tenia</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>15:38:47</td>
+                                                    <td>9s 527ms</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="9be88155184abe59de544b89a98346c945cfd1ae7c965a52964c83e57b058f63.html">Modificar pausas</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="7c7f8ba194e76f971edc58f0d5eada77302f6c4f58bdf669d843386c31b1f758.html">Modificar pausa colocando un valor igual al limite maximo de caracteres</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>15:38:58</td>
+                                                    <td>9s 349ms</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="9be88155184abe59de544b89a98346c945cfd1ae7c965a52964c83e57b058f63.html">Modificar pausas</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="fae1dd109f2fd5f1e0b4dae274203249e8c41574cc27bcede6cfb74a4b23432b.html">Modificar una pausa utilizando una descripcion que ya este en uso</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>15:39:09</td>
+                                                    <td>9s 148ms</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="3fca2ea95e77219937b5d680999051449775d8fdd23ab74e286641505fa2e359.html">Funcionalidades generales de la seccion pausas.</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="5641fe8889e1418cafde48991ab2ff81d09ff4effc136806f7f6e4a5827d9e30.html">Buscar una pausa por DTMF</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>15:39:18</td>
+                                                    <td>8s 413ms</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="3fca2ea95e77219937b5d680999051449775d8fdd23ab74e286641505fa2e359.html">Funcionalidades generales de la seccion pausas.</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="d965c585f6cb1f574d1682d2ed261bacf96e058e478c91df8fe4b4dd0dda1177.html">Buscar una pausa por descripcion</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>15:39:28</td>
+                                                    <td>8s 878ms</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="3fca2ea95e77219937b5d680999051449775d8fdd23ab74e286641505fa2e359.html">Funcionalidades generales de la seccion pausas.</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="5557de9d597ec2252085fefb41e492545e01cbe19fab3ed7f05a8c8a6831f44a.html">Buscar una pausa inexistente</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>15:39:37</td>
+                                                    <td>8s 195ms</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="9aa7ac0fda72ed4ec8c748c2173a71c79b00374170d734b8d20c0bbe78263262.html">Importar pausas</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="36192b4c895a85e329efb9dddbbd3052e7282c017ea196a3cb75ad5d44d626f6.html">Importar un archivo con formato invalido</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>15:39:47</td>
+                                                    <td>12s 677ms</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="9aa7ac0fda72ed4ec8c748c2173a71c79b00374170d734b8d20c0bbe78263262.html">Importar pausas</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="bca5966e9768a2a0efd3546b25ad0c70231e694414b2c43f3edfc4d9388f24e4.html">Importar un archivo con columnas faltantes</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>15:40:02</td>
+                                                    <td>12s 826ms</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="9aa7ac0fda72ed4ec8c748c2173a71c79b00374170d734b8d20c0bbe78263262.html">Importar pausas</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="a5ffdf94039284d5b2db2dcd431fc99d7e9e3d628d0097604802fb409c665ac1.html">Importar un archivo con columnas repetidas</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>15:40:16</td>
+                                                    <td>13s 219ms</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="9aa7ac0fda72ed4ec8c748c2173a71c79b00374170d734b8d20c0bbe78263262.html">Importar pausas</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="7d6f7588106d2854ed50ecb662531ea910f0bf6a3cb5b42e4d31819c0498cceb.html">Importar un archivo con columnas extras</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>15:40:31</td>
+                                                    <td>12s 260ms</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="9aa7ac0fda72ed4ec8c748c2173a71c79b00374170d734b8d20c0bbe78263262.html">Importar pausas</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="b349ce9d240da204109998896e7265435d9cfb561a05b7a53d033bcff8a2ae1b.html">Importar un archivo con columnas sin nombre</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>15:40:45</td>
+                                                    <td>12s 606ms</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="9aa7ac0fda72ed4ec8c748c2173a71c79b00374170d734b8d20c0bbe78263262.html">Importar pausas</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="76d227730ad2c422a997921325e5b9c17d6d6ca6ff478f041f3f9c939af67c8d.html">Importar un archivo con datos invalidos</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>12:39:24</td>
+                                                    <td>26s 530ms</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="9aa7ac0fda72ed4ec8c748c2173a71c79b00374170d734b8d20c0bbe78263262.html">Importar pausas</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="16627b252ddf7ac5128807540f16cade57cca5554f732624b1d2efb77fc5b242.html">Importar un archivo con datos validos</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>12:42:51</td>
+                                                    <td>39s 681ms</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <h3><i class="fas fa-edit"></i> Manual Tests</h3>
+
+                                                No manual tests were recorded
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                        </td>
+
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div id="beforefooter"></div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <span class="version">Serenity BDD version 2.4.4</span>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

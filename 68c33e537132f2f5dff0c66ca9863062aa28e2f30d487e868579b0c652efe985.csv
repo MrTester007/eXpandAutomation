@@ -1,0 +1,4 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Funcionalidades generales de la seccion pausas.","Buscar una pausa por DTMF","SUCCESS","2023-03-07T15:39:18.7910198-03:00[America/Montevideo]","0.0","8.41"
+"Funcionalidades generales de la seccion pausas.","Buscar una pausa por descripcion","SUCCESS","2023-03-07T15:39:28.4459386-03:00[America/Montevideo]","0.0","8.88"
+"Funcionalidades generales de la seccion pausas.","Buscar una pausa inexistente","SUCCESS","2023-03-07T15:39:37.8792668-03:00[America/Montevideo]","0.0","8.2"

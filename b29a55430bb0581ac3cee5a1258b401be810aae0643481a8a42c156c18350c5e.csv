@@ -1,0 +1,5 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Modificar etiquetas","Modificar descripcion correctamente","SUCCESS","2023-03-07T15:18:53.2277273-03:00[America/Montevideo]","0.0","10.35"
+"Modificar etiquetas","Modificar descripcion colocando caracteres invalidos","SUCCESS","2023-03-07T15:19:05.1294498-03:00[America/Montevideo]","0.0","13.48"
+"Modificar etiquetas","Modificar descripcion dejando el mimso valor que ya tenia","SUCCESS","2023-03-07T15:19:20.1018084-03:00[America/Montevideo]","0.0","10.09"
+"Modificar etiquetas","Modificar descripcion colocando un valor igual al limite maximo de caracteres","SUCCESS","2023-03-07T15:19:31.5664831-03:00[America/Montevideo]","0.0","10.63"

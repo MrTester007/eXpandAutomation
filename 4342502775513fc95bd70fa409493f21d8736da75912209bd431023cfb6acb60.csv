@@ -1,0 +1,6 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Funcionalidades generales de la seccion departamentos.","Buscar un departamento por nombre por medio de la barra de busqueda","SUCCESS","2023-03-08T11:19:04.0141179-03:00[America/Montevideo]","0.0","8.92"
+"Funcionalidades generales de la seccion departamentos.","Buscar un departamento inexistente","SUCCESS","2023-03-08T11:19:13.4439387-03:00[America/Montevideo]","0.0","10.77"
+"Funcionalidades generales de la seccion departamentos.","Buscar un departamento usando la descripcion por medio la barra de busqueda","SUCCESS","2023-03-08T11:19:25.7191856-03:00[America/Montevideo]","0.0","10.09"
+"Funcionalidades generales de la seccion departamentos.","Organizar grupos por Nombre","PENDING","2023-03-08T11:19:37.3670927-03:00[America/Montevideo]","0.0","6.79"
+"Funcionalidades generales de la seccion departamentos.","Organizar grupos por descripcion","PENDING","2023-03-08T11:19:44.7937-03:00[America/Montevideo]","0.0","7.2"

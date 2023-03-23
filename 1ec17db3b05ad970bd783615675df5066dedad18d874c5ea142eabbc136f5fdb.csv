@@ -1,0 +1,6 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Modificar pausas","Modificar pausa correctamente","SUCCESS","2023-03-07T15:38:21.2665022-03:00[America/Montevideo]","0.0","10.22"
+"Modificar pausas","Colocar una descripcion vacia","SUCCESS","2023-03-07T15:38:32.0165472-03:00[America/Montevideo]","0.0","14.14"
+"Modificar pausas","Modificar pausa dejando el mismo valor que ya tenia","SUCCESS","2023-03-07T15:38:47.614815-03:00[America/Montevideo]","0.0","9.53"
+"Modificar pausas","Modificar pausa colocando un valor igual al limite maximo de caracteres","SUCCESS","2023-03-07T15:38:58.3883382-03:00[America/Montevideo]","0.0","9.35"
+"Modificar pausas","Modificar una pausa utilizando una descripcion que ya este en uso","SUCCESS","2023-03-07T15:39:09.0197611-03:00[America/Montevideo]","0.0","9.15"

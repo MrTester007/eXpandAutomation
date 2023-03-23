@@ -1,0 +1,3 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Importar etiquetas","Importar un archivo con datos invalidos","FAILURE","2023-03-07T15:22:15.8861803-03:00[America/Montevideo]","0.0","14.43"
+"Importar etiquetas","Importar un archivo con datos validos","FAILURE","2023-03-07T15:22:31.9105547-03:00[America/Montevideo]","0.0","18.99"

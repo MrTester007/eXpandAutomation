@@ -1,0 +1,4 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Funcionalidades generales de la seccion","Filtrar por etiquetas del sistema","FAILURE","2023-03-07T15:19:43.4887157-03:00[America/Montevideo]","0.0","15.4"
+"Funcionalidades generales de la seccion","Filtrar por todas las etiquetas","FAILURE","2023-03-07T15:20:09.7128373-03:00[America/Montevideo]","0.0","17.31"
+"Funcionalidades generales de la seccion","Cambiar de pagina","FAILURE","2023-03-08T11:46:14.8872885-03:00[America/Montevideo]","0.0","8.88"

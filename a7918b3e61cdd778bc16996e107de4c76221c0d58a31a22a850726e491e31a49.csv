@@ -1,0 +1,6 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Eliminar etiquetas","Eliminar etiquetas que no son del sistema","SUCCESS","2023-03-08T11:45:44.9286906-03:00[America/Montevideo]","0.0","19.36"
+"Funcionalidades generales de la seccion","Items por pagina","SUCCESS","2023-03-08T11:46:05.538954-03:00[America/Montevideo]","0.0","8.78"
+"Funcionalidades generales de la seccion","Cambiar de pagina","FAILURE","2023-03-08T11:46:14.8872885-03:00[America/Montevideo]","0.0","8.88"
+"Importar etiquetas","Importar un archivo con datos invalidos","SUCCESS","2023-03-08T11:46:25.3158821-03:00[America/Montevideo]","0.0","15.07"
+"Importar etiquetas","Importar un archivo con datos validos","SUCCESS","2023-03-08T11:46:42.0659161-03:00[America/Montevideo]","0.0","17.52"

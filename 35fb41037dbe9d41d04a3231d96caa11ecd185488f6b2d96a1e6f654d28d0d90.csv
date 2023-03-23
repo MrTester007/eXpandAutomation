@@ -1,0 +1,6 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Agregar registros no llames","Crear registro valido","SUCCESS","2023-03-07T15:31:58.4687504-03:00[America/Montevideo]","0.0","9.42"
+"Agregar registros no llames","Crear registro utilizando caracteres invalidos","SUCCESS","2023-03-07T15:32:08.4241384-03:00[America/Montevideo]","0.0","13.08"
+"Agregar registros no llames","Crear un registro utilizando campos vacios","SUCCESS","2023-03-07T15:32:23.0215311-03:00[America/Montevideo]","0.0","13.07"
+"Agregar registros no llames","Crear un registro utilizando valores iguales al limite permitido","SUCCESS","2023-03-07T15:32:37.5609794-03:00[America/Montevideo]","0.0","9.25"
+"Agregar registros no llames","Crear un registro utilizando un numero ya en uso","SUCCESS","2023-03-07T15:32:47.6411768-03:00[America/Montevideo]","0.0","10.04"

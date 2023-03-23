@@ -1,0 +1,268 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Screenshots</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="bootstrap-icons/font/bootstrap-icons.css"><!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.11.3/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.11.3/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.11.3/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/>
+<!--CHART.JS-->
+<script src="chartjs/chart.js"></script>
+<script src="chartjs/chartjs-plugin-datalabels@2.0.0"></script>
+<script src="chartjs/patternomaly.min.js"></script>
+<script>
+    // Register the plugin to all charts:
+    Chart.register(ChartDataLabels);
+</script>
+<!-- Nivo Slider -->
+<link rel="stylesheet" href="nivo-slider/3.2/nivo-slider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="nivo-slider/3.2/themes/default/default.css" type="text/css" media="screen" />
+<script src="nivo-slider/3.2/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+
+        var screenshotIndex = getUrlVars()["screenshot"];
+
+        $(window).load(function () {
+            $('#slider').nivoSlider({
+                startSlide: screenshotIndex,
+                effect: 'fade',
+                animSpeed: 200,
+                manualAdvance: true
+            });
+        });
+
+        $(window).keydown(function(e) {
+            switch(e.which) {
+                case 37:
+                    $('a.nivo-prevNav').click();
+                    break;
+                case 39:
+                    $('a.nivo-nextNav').click();
+                    break;
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">eXpand Automation</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+                <a href="index.html">Home</a>
+                > <span class="truncate-40"><a
+                    href="acc43746938337e353e6acb18b79c7ad5ee1c98851ab83e3d3b681e94158e341.html">Agregar Listas</a></span>
+                > <span class="truncate-60"><a
+                    href="e400275cf7b5deac5d51d939cc0948db07589269839c4d1dc41f6cb1dbd8db6b.html">Crear una lista de tipo rango utilizando un nombre ya en uso </a></span>
+                > Screenshots
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="bi bi-journal-check"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="bi bi-journal-text"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="dafb266f68444cb7f2451c923d70c1428ac45470c361842b818e6daa9bcd4fa8.html"><i class="bi bi-chat-text"></i> Themes</a>
+        </li>
+        <li >
+            <a href="7ea0a5e2d679b9deeda9910ae4a9bcd3a281e0d908303a9e16e486103e98880c.html"><i class="bi bi-chat-text"></i> Capabilities</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="bi bi-chat-text"></i> Features</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 07-03-2023 15:25</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+
+    <div id="contentbody">
+        <div class="titlebar">
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td>
+                            <div>
+                                <h3 class="discreet-story-header">
+                                    <i class="fs-2 bi bi-chat-left-quote large-icon"></i>
+                                    <span class="story-header-title">Agregar Listas </span>
+                                    <span class="badge tag-badge" style="">Feature</span>
+                                </h3>
+
+                                <div class="discreet-requirement-narrative-title">
+                                Como agente registrado en el sistema quiero poder crear listas<br />
+para poder llevar un control del registro de mis llamadas y mensajes
+                                </div>
+                            </div>
+
+                        </td>
+                        <td valign="top" align="right">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td colspan="2" class="test-title-bar">
+                            <span class="outcome-icon"><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon fa-2x' title='SUCCESS'></i></a></span>
+                            <span class="test-case-title">
+                                <span class="success-color">Crear una lista de tipo rango utilizando un nombre ya en uso
+                                    <span class="related-issue-title"></span>
+                                </span>
+                            </span>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+
+
+    <div id="beforetable"></div>
+    <div id="contenttilttle">
+        <div class="slider-wrapper theme-default">
+            <div id="slider">
+                <img src="5dfebf6541f25dd248fd12606f2521a9d479a66182d1c435e157d0c41e18ffad.png" title=" Given El agente ingresa a la seccion de listas" width="1920"/>
+                <img src="5dfebf6541f25dd248fd12606f2521a9d479a66182d1c435e157d0c41e18ffad.png" title=" Nahuel opens the Login pom" width="1920"/>
+                <img src="5dfebf6541f25dd248fd12606f2521a9d479a66182d1c435e157d0c41e18ffad.png" title=" Nahuel enters 'nahuel.silvera' into The input for the username" width="1920"/>
+                <img src="59f4c43de0b2815472707d6255a03e130952342663b6d0f31af474d915f911b6.png" title=" Nahuel enters 'nahuel.silvera' into The input for the username (completed)" width="1920"/>
+                <img src="59f4c43de0b2815472707d6255a03e130952342663b6d0f31af474d915f911b6.png" title=" Nahuel enters 'abcd1234' into The input for the password" width="1920"/>
+                <img src="c9eb3a1ae8ef9cb7a7d5d05c33480bf70092ad6d655645054970ed543e9b4c0d.png" title=" Nahuel enters 'abcd1234' into The input for the password (completed)" width="1920"/>
+                <img src="c9eb3a1ae8ef9cb7a7d5d05c33480bf70092ad6d655645054970ed543e9b4c0d.png" title=" Nahuel clicks on The button for login" width="1920"/>
+                <img src="413d0ac79a19b626c6ec6875d9a2837d204ad39f73f41084bd08620183de572c.png" title=" Nahuel clicks on The button for login (completed)" width="1920"/>
+                <img src="413d0ac79a19b626c6ec6875d9a2837d204ad39f73f41084bd08620183de572c.png" title=" Nahuel go to the sectionListas" width="1920"/>
+                <img src="413d0ac79a19b626c6ec6875d9a2837d204ad39f73f41084bd08620183de572c.png" title=" Nahuel open the side menu" width="1920"/>
+                <img src="413d0ac79a19b626c6ec6875d9a2837d204ad39f73f41084bd08620183de572c.png" title=" Nahuel clicks on The button for access to the tools menu" width="1920"/>
+                <img src="997cd8f5a893e41ee894510b75d06d55d08311461f97e5ec65b4ca85669962c6.png" title=" Nahuel clicks on The button for access to the tools menu (completed)" width="1920"/>
+                <img src="997cd8f5a893e41ee894510b75d06d55d08311461f97e5ec65b4ca85669962c6.png" title=" Nahuel open the side menu (completed)" width="1920"/>
+                <img src="997cd8f5a893e41ee894510b75d06d55d08311461f97e5ec65b4ca85669962c6.png" title=" Nahuel enters 'Listas' into The search bar" width="1920"/>
+                <img src="346e95bdec455fae97fc437a5685708e41e657c7af9d4383fc415fe7649af387.png" title=" Nahuel enters 'Listas' into The search bar (completed)" width="1920"/>
+                <img src="346e95bdec455fae97fc437a5685708e41e657c7af9d4383fc415fe7649af387.png" title=" Nahuel clicks on The button for go to the lists section" width="1920"/>
+                <img src="e53ab7e3729e4b55e9afdc8e07af9a7009bc066fe39d13c50441902cf5f4fb32.png" title=" Nahuel clicks on The button for go to the lists section (completed)" width="1920"/>
+                <img src="e53ab7e3729e4b55e9afdc8e07af9a7009bc066fe39d13c50441902cf5f4fb32.png" title=" Nahuel go to the sectionListas (completed)" width="1920"/>
+                <img src="e53ab7e3729e4b55e9afdc8e07af9a7009bc066fe39d13c50441902cf5f4fb32.png" title=" Given El agente ingresa a la seccion de listas (completed)" width="1920"/>
+                <img src="11df6d14053255119653459d34b2f95ee41aabff762b6f5e7598d591ad06e148.png" title=" When El agente agrega una nueva lista de tipo rango utilizando un valor nombre ya en uso" width="1920"/>
+                <img src="11df6d14053255119653459d34b2f95ee41aabff762b6f5e7598d591ad06e148.png" title=" Nahuel clicks on El boton para agregar nuevas listas" width="1920"/>
+                <img src="3c2255352de7f5cfe2fa40621980da0d3340e62bed69b0a4ea359d6e4742b48d.png" title=" Nahuel clicks on El boton para agregar nuevas listas (completed)" width="1920"/>
+                <img src="3c2255352de7f5cfe2fa40621980da0d3340e62bed69b0a4ea359d6e4742b48d.png" title=" Nahuel enters '7NEkOGQGV5KNdfXqI' into El input para rellenar el campo nombre" width="1920"/>
+                <img src="cb71cff6e312e27e1596da1bee9a749eb96db4169ed0d8e4a55eac8d3b185118.png" title=" Nahuel enters '7NEkOGQGV5KNdfXqI' into El input para rellenar el campo nombre (completed)" width="1920"/>
+                <img src="cb71cff6e312e27e1596da1bee9a749eb96db4169ed0d8e4a55eac8d3b185118.png" title=" Nahuel enters 'Puede ser cualquier valor' into El input para rellenar el campo descripcion" width="1920"/>
+                <img src="a4787495277d7b637f3753de0949569d1d42875f2e21609b93bbf0b1ad445ec4.png" title=" Nahuel enters 'Puede ser cualquier valor' into El input para rellenar el campo descripcion (completed)" width="1920"/>
+                <img src="a4787495277d7b637f3753de0949569d1d42875f2e21609b93bbf0b1ad445ec4.png" title=" Nahuel enters 'hsaW25S' into El input para rellenar el campo alias" width="1920"/>
+                <img src="ae4af2930d82156ab2d81466d95a87a3c62289f28bd51ce49534e7229014ac28.png" title=" Nahuel enters 'hsaW25S' into El input para rellenar el campo alias (completed)" width="1920"/>
+                <img src="ae4af2930d82156ab2d81466d95a87a3c62289f28bd51ce49534e7229014ac28.png" title=" Drop down mat select input" width="1920"/>
+                <img src="ae4af2930d82156ab2d81466d95a87a3c62289f28bd51ce49534e7229014ac28.png" title=" Nahuel clicks on El dropdown para seleccionar el tipo de lista" width="1920"/>
+                <img src="ca99369bf0aba9186642e2d094d433802578fb50a7b766e38ccec90857e50efb.png" title=" Nahuel clicks on El dropdown para seleccionar el tipo de lista (completed)" width="1920"/>
+                <img src="020cbd6663a74e8ea00913590c1115086cf42517195005b6badba25c58b490c1.png" title=" Nahuel clicks on La opcion que contiene el dropdown" width="1920"/>
+                <img src="89c1eb089dc9ce33e00f78dfb744c1728bb76ab00bbfd2c5fa48b3e6bbbd7725.png" title=" Nahuel clicks on La opcion que contiene el dropdown (completed)" width="1920"/>
+                <img src="89c1eb089dc9ce33e00f78dfb744c1728bb76ab00bbfd2c5fa48b3e6bbbd7725.png" title=" Drop down mat select input (completed)" width="1920"/>
+                <img src="89c1eb089dc9ce33e00f78dfb744c1728bb76ab00bbfd2c5fa48b3e6bbbd7725.png" title=" Nahuel clicks on El boton para finalizar la creacion de la lista" width="1920"/>
+                <img src="595d6c5429ed71bcc019f63f7ae865aff7ccd07fe9ddd4c26730f038e950e388.png" title=" Nahuel clicks on El boton para finalizar la creacion de la lista (completed)" width="1920"/>
+                <img src="595d6c5429ed71bcc019f63f7ae865aff7ccd07fe9ddd4c26730f038e950e388.png" title=" When El agente agrega una nueva lista de tipo rango utilizando un valor nombre ya en uso (completed)" width="1920"/>
+                <img src="31782383d24d1d504737c7c270eb3786324277edf718bb19744bb60a1ed458e7.png" title=" Then La pagina muestra un mensaje de error indicando que el nombre introducido ya esta en uso" width="1920"/>
+                <img src="31782383d24d1d504737c7c270eb3786324277edf718bb19744bb60a1ed458e7.png" title=" Then El label que indica que el nombre ya esta en uso should be an element that is visible" width="1920"/>
+                <img src="31782383d24d1d504737c7c270eb3786324277edf718bb19744bb60a1ed458e7.png" title=" Then La pagina muestra un mensaje de error indicando que el nombre introducido ya esta en uso (completed): <span class='success-color'>SUCCESS</span>" width="1920"/>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div id="beforefooter"></div>
+<div id="bottomfooter">
+    <span class="version">Serenity BDD version 3.2.5</span>
+</div>
+</body>
+</html>

@@ -1,0 +1,5 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Funcionalidades generales de la seccion","Filtrar por etiquetas que no son del sistema","SUCCESS","2023-03-07T15:20:00.4208118-03:00[America/Montevideo]","0.0","8.48"
+"Funcionalidades generales de la seccion","Buscar un valor valido en la barra de busquedas","SUCCESS","2023-03-07T15:20:46.0480207-03:00[America/Montevideo]","0.0","8.4"
+"Funcionalidades generales de la seccion","Buscar un valor inexistente en la barra de busquedas","SUCCESS","2023-03-07T15:20:54.9791144-03:00[America/Montevideo]","0.0","10.46"
+"Funcionalidades generales de la seccion","Items por pagina","SUCCESS","2023-03-08T11:46:05.538954-03:00[America/Montevideo]","0.0","8.78"
