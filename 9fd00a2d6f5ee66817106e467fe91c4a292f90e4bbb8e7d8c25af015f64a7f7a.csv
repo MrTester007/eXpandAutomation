@@ -1,0 +1,5 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Loguear en la pagina","Loguear con credenciales validas","SUCCESS","2023-04-14T17:52:30.82008-03:00[America/Montevideo]","0.0","3.39"
+"Loguear en la pagina","Loguear con credenciales validas incompletas","SUCCESS","2023-04-14T17:52:34.683488-03:00[America/Montevideo]","0.0","3.59"
+"Loguear en la pagina","Loguear con credenciales invalidas","SUCCESS","2023-04-14T17:52:38.8820445-03:00[America/Montevideo]","0.0","3.64"
+"Loguear en la pagina","Loguear sin colocar credenciales","SUCCESS","2023-04-14T17:52:43.2089893-03:00[America/Montevideo]","0.0","3.93"

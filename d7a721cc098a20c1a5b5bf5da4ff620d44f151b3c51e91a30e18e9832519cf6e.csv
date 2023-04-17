@@ -1,0 +1,3 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Importar registros no llames","Importar un archivo con columnas extras","FAILURE","2023-04-14T17:45:55.1239656-03:00[America/Montevideo]","0.0","13.87"
+"Importar registros no llames","Importar un archivo con datos invalidos","FAILURE","2023-04-14T17:46:20.9713013-03:00[America/Montevideo]","0.0","10.22"

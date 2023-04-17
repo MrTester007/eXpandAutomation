@@ -1,0 +1,6 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Agregar elementos de una lista simple","Crear un elemento de lista simple valido","SUCCESS","2023-04-14T17:31:26.036503-03:00[America/Montevideo]","0.0","9.79"
+"Agregar elementos de una lista simple","Crear un elemento de lista simple utilizando caracteres invalidos","SUCCESS","2023-04-14T17:31:36.4439057-03:00[America/Montevideo]","0.0","13.71"
+"Agregar elementos de una lista simple","Crear un elemento de lista simple utilizando caracteres vacios","SUCCESS","2023-04-14T17:31:50.8303995-03:00[America/Montevideo]","0.0","14.33"
+"Agregar elementos de una lista simple","Crear un elemento de lista simple utilizando el limite de caracteres","SUCCESS","2023-04-14T17:32:05.8491324-03:00[America/Montevideo]","0.0","9.76"
+"Agregar elementos de una lista simple","Crear un elemento de lista simple utilizando un valor ya existente","SUCCESS","2023-04-14T17:32:16.2261408-03:00[America/Montevideo]","0.0","8.87"

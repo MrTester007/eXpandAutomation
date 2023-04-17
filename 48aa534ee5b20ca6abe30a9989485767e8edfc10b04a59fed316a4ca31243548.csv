@@ -1,0 +1,3 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Importar departamentos","Importar un archivo con datos invalidos","FAILURE","2023-04-14T17:24:34.2977624-03:00[America/Montevideo]","0.0","12.98"
+"Importar departamentos","Importar un archivo con datos validos y pickup autoseleccionado","FAILURE","2023-04-14T17:24:47.971481-03:00[America/Montevideo]","0.0","22.48"

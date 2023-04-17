@@ -1,0 +1,3 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Funcionalidades generales de la seccion registro no llame","Buscar un registro por numero","SUCCESS","2023-04-14T17:45:03.7889619-03:00[America/Montevideo]","0.0","7.3"
+"Funcionalidades generales de la seccion registro no llame","Buscar un registro inexistente","SUCCESS","2023-04-14T17:45:11.5066719-03:00[America/Montevideo]","0.0","9.01"

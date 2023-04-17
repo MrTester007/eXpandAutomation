@@ -1,0 +1,8 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Funcionalidades generales de la seccion","Filtrar por etiquetas del sistema","SUCCESS","2023-04-14T17:29:07.9529303-03:00[America/Montevideo]","0.0","7.41"
+"Funcionalidades generales de la seccion","Filtrar por etiquetas que no son del sistema","SUCCESS","2023-04-14T17:29:16.0461245-03:00[America/Montevideo]","0.0","7.51"
+"Funcionalidades generales de la seccion","Filtrar por todas las etiquetas","SUCCESS","2023-04-14T17:29:24.0220341-03:00[America/Montevideo]","0.0","8.0"
+"Funcionalidades generales de la seccion","Items por pagina","SUCCESS","2023-04-14T17:29:32.57096-03:00[America/Montevideo]","0.0","6.14"
+"Funcionalidades generales de la seccion","Cambiar de pagina","SUCCESS","2023-04-14T17:29:39.1238196-03:00[America/Montevideo]","0.0","6.14"
+"Funcionalidades generales de la seccion","Buscar un valor valido en la barra de busquedas","SUCCESS","2023-04-14T17:29:45.6637626-03:00[America/Montevideo]","0.0","6.7"
+"Funcionalidades generales de la seccion","Buscar un valor inexistente en la barra de busquedas","SUCCESS","2023-04-14T17:29:52.9713759-03:00[America/Montevideo]","0.0","8.51"

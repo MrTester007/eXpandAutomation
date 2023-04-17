@@ -1,0 +1,5 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Eliminar elementos de una lista simple","Eliminar un elemento de una lista simple","ERROR","2023-04-14T17:32:25.5479996-03:00[America/Montevideo]","0.0","12.44"
+"Editar elementos de una lista simple","Modificar campo valor utilizando caracteres vacios en elementos de una lista simple","FAILURE","2023-04-14T17:33:00.4475038-03:00[America/Montevideo]","0.0","10.72"
+"Importar listas simples","Importar un archivo con datos invalidos","FAILURE","2023-04-14T17:34:25.8052709-03:00[America/Montevideo]","0.0","15.63"
+"Importar listas simples","Importar un archivo con datos validos","ERROR","2023-04-14T17:34:42.1226225-03:00[America/Montevideo]","0.0","20.92"

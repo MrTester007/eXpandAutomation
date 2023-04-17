@@ -1,0 +1,7 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Agregar pausas","Crear pausa valida","SUCCESS","2023-04-14T17:46:46.5696358-03:00[America/Montevideo]","0.0","7.29"
+"Agregar pausas","Crear una pausa utilizando caracteres invalidos","SUCCESS","2023-04-14T17:46:54.4673898-03:00[America/Montevideo]","0.0","11.75"
+"Agregar pausas","Crear una pausa utilizando campos vacios","SUCCESS","2023-04-14T17:47:06.8338318-03:00[America/Montevideo]","0.0","12.89"
+"Agregar pausas","Crear una pausa utilizando valores iguales al limite permitido","SUCCESS","2023-04-14T17:47:20.4301687-03:00[America/Montevideo]","0.0","8.7"
+"Agregar pausas","Crear una pausa utilizando un dtmf ya en uso","SUCCESS","2023-04-14T17:47:29.7924197-03:00[America/Montevideo]","0.0","7.19"
+"Agregar pausas","Crear una pausa utilizando una descripcion ya en uso","SUCCESS","2023-04-14T17:47:37.6102307-03:00[America/Montevideo]","0.0","7.33"

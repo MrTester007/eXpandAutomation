@@ -1,0 +1,7 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Importar localidades","Importar un archivo con formato invalido","SUCCESS","2023-04-14T17:41:44.3965737-03:00[America/Montevideo]","0.0","10.8"
+"Importar localidades","Importar un archivo con columnas faltantes","SUCCESS","2023-04-14T17:41:55.8335541-03:00[America/Montevideo]","0.0","11.44"
+"Importar localidades","Importar un archivo con columnas repetidas","SUCCESS","2023-04-14T17:42:07.7148891-03:00[America/Montevideo]","0.0","11.36"
+"Importar localidades","Importar un archivo con columnas extras","SUCCESS","2023-04-14T17:42:19.8190898-03:00[America/Montevideo]","0.0","10.39"
+"Importar localidades","Importar un archivo con columnas sin nombre","SUCCESS","2023-04-14T17:42:30.8479115-03:00[America/Montevideo]","0.0","12.24"
+"Importar localidades","Importar un archivo con datos validos","SUCCESS","2023-04-14T17:42:56.3799361-03:00[America/Montevideo]","0.0","14.5"

@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Serenity Reports</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!--[if IE 7]>
+<!--<link rel="stylesheet" href="font-awesome/css/font-awesome-ie7.min.css">-->
+
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/v4-shims.min.css">
+
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><link rel="stylesheet" type="text/css" href="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.css">
+<link rel="stylesheet" type="text/css" href="chartist/dist/chartist.min.css">
+<script src="chartist/dist/chartist.min.js"></script>
+<script src="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.js"></script>
+<!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.20/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.20/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.10.20/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.20/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.20/datatables.bootstrap4.min.css" rel="stylesheet" />
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/><!-- JQuery-UI -->
+<link type="text/css" href="jqueryui/1.11.2-start/jquery-ui.min.css" rel="Stylesheet" />
+<script type="text/javascript" src="jqueryui/1.11.2-start/jquery-ui.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.20/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.20/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.10.20/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.20/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.20/datatables.bootstrap4.min.css" rel="stylesheet" />
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+
+
+
+
+    <script class="code" type="text/javascript">$(document).ready(function () {
+
+
+        $('.scenario-result-table').DataTable({
+
+            "order": [[0, "asc",], [3, "asc",]],
+            "pageLength": 25,
+            "language": {
+                searchPlaceholder: "Filter",
+                search: ""
+            }
+        });
+
+        // Results table
+        $('#test-results-table').DataTable({
+            "order": [[0, "asc",], [3, "asc",]],
+            "pageLength": 100,
+            "lengthMenu": [[25, 50, 100, 200, -1], [25, 50, 100, 200, "All"]]
+        });
+
+    })
+    ;
+    </script>
+</head>
+
+<body class="results-page">
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">eXpand Automation</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+
+
+    <div id="contenttop">
+        <div class="middlebg">
+        <span class="breadcrumbs"><a href="index.html">Home</a>
+                > Theme 
+                > <span
+                    class="truncate-60">Labels (Passing Tests)</span>
+        </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="fa fa-check-square-o"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="7ea0a5e2d679b9deeda9910ae4a9bcd3a281e0d908303a9e16e486103e98880c.html"><i class="fa fa-comments-o"></i> Capabilities</a>
+        </li>
+        <li >
+            <a href="2a4631d87648e59c428d4cf0e9247f9d286e4679f436ca2ce872e931eb4dfd58.html"><i class="fa fa-comments-o"></i> Stories</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="fa fa-comments-o"></i> Features</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 14-04-2023 17:54</span>
+    <br style="clear:left"/>
+</div>
+    <div class="clr"></div>
+    <div id="beforetable"></div>
+    <div id="results-dashboard">
+        <div class="middlb">
+            <div class="table">
+
+                <h2><i class='fa fa-tags'></i> Theme: Labels (Passing Tests)</h2>
+                <table class='overview'>
+                    <tr>
+                        <td width="375px" valign="top">
+                            <div class="test-count-summary">
+                                <div>
+
+                                23 tests
+                                    across 23 scenarios
+
+                                     |
+                                        <a href="c9ee75a17cf3f9cf0fcf332f706c00403e2cef315d444195b0f9fca80156afc8.csv" title="Download CSV"> <i class="fa fa-download"
+                                                                                        title="Download CSV"></i></a>
+
+                                    <p class="report-info"><i class="fas fa-info-circle"></i> Note that results include
+                                        data-driven scenarios containing tests ,
+                                        which may also contain results other than tests .</p>
+
+
+
+                                </div>
+                            </div>
+
+                            <div>
+                                <ul class="nav nav-tabs">
+                                    <li class="active">
+                                        <a data-toggle="tab" href="#summary"><i class="fas fa-home"></i> Summary</a>
+                                    </li>
+                                    <li>
+                                        <a data-toggle="tab" href="#tests"><i class="fas fa-tachometer-alt"></i> Test
+                                            Results</a>
+                                    </li>
+                                </ul>
+
+
+                                <div class="card border">
+                                    <div class="tab-content" id="pills-tabContent">
+                                        <div id="summary" class="tab-pane fade in active">
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                    <div class="col-sm-4">
+                                                            <div style="width:300px;"
+                                                                 class="chart-container automated-and-manual-results">
+                                                                <div class="ct-chart ct-square"></div>
+                                                            </div>
+                                                            <script>
+
+                                                                var labels = ['100%', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '];
+                                                                // Our series array that contains series objects or in this case series data arrays
+
+                                                                var series = [{meta: 'Passing tests (automated)', value: 23}, {meta: 'Passing tests (manual)', value: 0}, {meta: 'Pending tests (automated)', value: 0}, {meta: 'Pending tests (manual)', value: 0}, {meta: 'Ignored tests (automated)', value: 0}, {meta: 'Ignored tests (manual)', value: 0}, {meta: 'Skipped tests (automated)', value: 0}, {meta: 'Skipped tests (manual)', value: 0}, {meta: 'Failing tests (automated)', value: 0}, {meta: 'Failing tests (manual)', value: 0}, {meta: 'Broken tests (automated)', value: 0}, {meta: 'Broken tests (manual)', value: 0}, {meta: 'Compromised tests (automated)', value: 0}, {meta: 'Compromised tests (manual)', value: 0}];
+
+                                                                // As options we currently only set a static size of 300x200 px. We can also omit this and use aspect ratio containers
+                                                                // as you saw in the previous example
+                                                                var options = {
+                                                                    width: 350,
+                                                                    height: 300
+                                                                };
+
+
+                                                                new Chartist.Pie('.ct-chart', {
+                                                                    series: series,
+                                                                    labels: labels
+                                                                }, {
+                                                                    plugins: [Chartist.plugins.tooltip()],
+                                                                    donut: true,
+                                                                    donutWidth: 60,
+                                                                    donutSolid: true,
+                                                                    startAngle: 270,
+                                                                    showLabel: true
+                                                                }, options);
+
+
+                                                                $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+                                                                    new Chartist.Pie('.ct-chart', {
+                                                                        series: series,
+                                                                        labels: labels
+                                                                    }, {
+                                                                        plugins: [Chartist.plugins.tooltip()],
+                                                                        donut: true,
+                                                                        donutWidth: 60,
+                                                                        donutSolid: true,
+                                                                        startAngle: 270,
+                                                                        showLabel: true
+                                                                    }, options);
+                                                                });
+
+
+                                                            </script>
+                                                    </div>
+                                                    <div class="col-sm-8">
+
+                                                        <table class="table">
+                                                            <thead>
+                                                            <tr>
+                                                                <th scope="col">Scenarios</th>
+                                                                <th scope="col" colspan="2" class="automated-stats">
+                                                                    Automated
+                                                                </th>
+                                                            </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                            <tr>
+                                                                    <td class="aggregate-result-count">
+                                                                        <a href="8a513b35504a01ed2fd7ac693d903f46b6a2f47d6b75c3aa052d616149f96edb.html"><i
+                                                                                class='fa fa-check-circle-o success-icon'></i>&nbsp;Passing</a>
+                                                                    </td>
+                                                                <td class="automated-stats">23</td>
+                                                                <td class="automated-stats">100%</td>
+                                                            </tr>
+                                                            <tr>
+                                                                    <td class="aggregate-result-count"><i
+                                                                            class='fa fa-stop-circle-o pending-icon'></i>&nbsp;Pending
+                                                                    </td>
+                                                                <td class="automated-stats">0</td>
+                                                                <td class="automated-stats"> </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="aggregate-result-count"><i
+                                                                        class='fa fa-ban ignored-icon'></i>&nbsp;Ignored
+                                                                </td>
+                                                                <td class="automated-stats">0</td>
+                                                                <td class="automated-stats"> </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="aggregate-result-count"><i
+                                                                        class='fa fa-fast-forward skip-icon'></i>&nbsp;Skipped
+                                                                </td>
+                                                                <td class="automated-stats">0</td>
+                                                                <td class="automated-stats"> </td>
+                                                            </tr>
+                                                            <tr>
+                                                                            <td colspan="3"><i
+                                                                                class='fa fa-times failure-icon'></i>&nbsp;<em>Unsuccessful</em></a>
+                                                                            </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="aggregate-result-count indented-error-category">
+                                                                    <i
+                                                                            class='fa fa-times-circle failure-icon'></i>&nbsp;Failed
+                                                                </td>
+                                                                <td class="automated-stats">0</td>
+                                                                <td class="automated-stats"> </td>
+                                                            <tr>
+                                                                <td class="aggregate-result-count indented-error-category">
+                                                                    <i
+                                                                            class='fa fa-exclamation-triangle error-icon'></i>&nbsp;Broken
+                                                                </td>
+                                                                <td class="automated-stats">0</td>
+                                                                <td class="automated-stats"> </td>
+                                                            <tr>
+                                                                <td class="aggregate-result-count indented-error-category">
+                                                                    <i
+                                                                            class='fa fa-chain-broken compromised-icon'></i>&nbsp;Compromised
+                                                                </td>
+                                                                <td class="automated-stats">0</td>
+                                                                <td class="automated-stats"> </td>
+                                                            </tr>
+                                                            <tr class="summary-stats">
+                                                                <td class="aggregate-result-count">Total</td>
+                                                                <td class="automated-stats">23</td>
+                                                                <td class="automated-stats"></td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <h3>Tags</h3>
+
+                                                        <div class="card">
+                                                            <div class="card-body">
+                                                                <h5 class="card-title">Theme</h5>
+                                                                <div>
+                                                                    <a href="18da9e298c5c2056f3abb4d7409098906f203659831783636f891817b32a563d.html">
+                                                                        <span class="badge"
+                                                                              style="background-color:#1D9918; margin:1em;padding:4px;"><i
+                                                                                class="fa fa-tag"></i> Administration&nbsp;&nbsp;&nbsp;23</span>
+                                                                    </a>
+                                                                    <a href="339644e170fc947956c2e464d6565075878134fda120a106edb151cf3566b93d.html">
+                                                                        <span class="badge"
+                                                                              style="background-color:#1D9918; margin:1em;padding:4px;"><i
+                                                                                class="fa fa-tag"></i> Basic/Labels&nbsp;&nbsp;&nbsp;23</span>
+                                                                    </a>
+                                                                    <a href="818eab0efe99b6672b492bb1927d7268483c457a833dfafed80f7478c035a111.html">
+                                                                        <span class="badge"
+                                                                              style="background-color:#1D9918; margin:1em;padding:4px;"><i
+                                                                                class="fa fa-tag"></i> Administration/Basic&nbsp;&nbsp;&nbsp;23</span>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="tests" class="tab-pane fade">
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <h3><i class="fas fa-cogs"></i> Automated Tests</h3>
+
+                                            <table class="scenario-result-table table" id="scenario-results">
+                                                <thead>
+                                                <tr>
+                                                    <th>feature</th>
+                                                    <th class="test-name-column">Scenario</th>
+                                                    <th>Steps</th>
+                                                    <th>Start Time</th>
+                                                    <th>Duration</th>
+                                                    <th>Result</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="f3298c356f12b8dabb836cd96abd02a9e159f9c15264a49f1d26335d88ea07f5.html">Agregar etiquetas</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="70c51f911f6a3e2fd0423846db6da7d4dc6b3094c32a480b90f97f12c0ef8b6a.html"><span class='context-icon'><i class='fa fa-chrome' aria-hidden='true'></i> <i class='fa fa-windows' aria-hidden='true'></i></span>Crear etiqueta valida</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>17:27:32</td>
+                                                    <td>7s 852ms</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="f3298c356f12b8dabb836cd96abd02a9e159f9c15264a49f1d26335d88ea07f5.html">Agregar etiquetas</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="28b27e257a0d68fafef45858841a39eab7a34d8ca7a830ca2280bd6a28418286.html"><span class='context-icon'><i class='fa fa-chrome' aria-hidden='true'></i> <i class='fa fa-windows' aria-hidden='true'></i></span>Crear una etiqueta utilizando caracteres invalidos</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>17:27:41</td>
+                                                    <td>12s 299ms</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="f3298c356f12b8dabb836cd96abd02a9e159f9c15264a49f1d26335d88ea07f5.html">Agregar etiquetas</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="cc41393f6e410efe6c32468bc54bdb5fe5657d114fbedeb8cbf9c434ff6cbfa5.html"><span class='context-icon'><i class='fa fa-chrome' aria-hidden='true'></i> <i class='fa fa-windows' aria-hidden='true'></i></span>Crear una etiqueta utilizando caracteres vacios</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>17:27:54</td>
+                                                    <td>11s 858ms</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="f3298c356f12b8dabb836cd96abd02a9e159f9c15264a49f1d26335d88ea07f5.html">Agregar etiquetas</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="13968301c42d22361744cfde1e38273b259113dc36f6ba72bba0d6c61ee74703.html"><span class='context-icon'><i class='fa fa-chrome' aria-hidden='true'></i> <i class='fa fa-windows' aria-hidden='true'></i></span>Crear una etiqueta utilizando valores iguales al limite permitido</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>17:28:06</td>
+                                                    <td>8s 025ms</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="f3298c356f12b8dabb836cd96abd02a9e159f9c15264a49f1d26335d88ea07f5.html">Agregar etiquetas</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="3b724543ff348a52ae60e4ee41bf08ba02a6a1fbef130c32dfe7186f2db50424.html"><span class='context-icon'><i class='fa fa-chrome' aria-hidden='true'></i> <i class='fa fa-windows' aria-hidden='true'></i></span>Crear una etiqueta utilizando un nombre ya en uso</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>17:28:15</td>
+                                                    <td>6s 831ms</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="2adbacfe4cececb36b504d7f7a4e76ddcf16987de5050792194cdaea0a610071.html">Eliminar etiquetas</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="8c6e5e0e70e3f7a7990397f2040258bd590390d19637836d103f89b0d5119f47.html"><span class='context-icon'><i class='fa fa-chrome' aria-hidden='true'></i> <i class='fa fa-windows' aria-hidden='true'></i></span>Eliminar etiquetas que no son del sistema</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>17:28:22</td>
+                                                    <td>6s 857ms</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="3b830d67147f9a82621bfcdc8c09b42ea40dd89b76bd79b8a8ca078dc12d2c37.html">Modificar etiquetas</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="e24abbf224322e4c480af8eb00e1aa7804e3f52c7319b41d00997e475ba489b3.html"><span class='context-icon'><i class='fa fa-chrome' aria-hidden='true'></i> <i class='fa fa-windows' aria-hidden='true'></i></span>Modificar descripcion correctamente</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>17:28:30</td>
+                                                    <td>7s 903ms</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="3b830d67147f9a82621bfcdc8c09b42ea40dd89b76bd79b8a8ca078dc12d2c37.html">Modificar etiquetas</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="2601c9d10d63468fd039f6fe31f04c0dc7ac33e0c1cd71c1307e0f18cf457848.html"><span class='context-icon'><i class='fa fa-chrome' aria-hidden='true'></i> <i class='fa fa-windows' aria-hidden='true'></i></span>Modificar descripcion colocando caracteres invalidos</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>17:28:38</td>
+                                                    <td>12s 053ms</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="3b830d67147f9a82621bfcdc8c09b42ea40dd89b76bd79b8a8ca078dc12d2c37.html">Modificar etiquetas</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="3dfdbb07228af912dd6a8359913980c2ea8cd644de9003605d9165fc26530647.html"><span class='context-icon'><i class='fa fa-chrome' aria-hidden='true'></i> <i class='fa fa-windows' aria-hidden='true'></i></span>Modificar descripcion dejando el mimso valor que ya tenia</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>17:28:51</td>
+                                                    <td>7s 638ms</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="3b830d67147f9a82621bfcdc8c09b42ea40dd89b76bd79b8a8ca078dc12d2c37.html">Modificar etiquetas</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="45ce8e083cdacb7e3a57c30f5eac99259a0925665e8714ef2e8be84617bca5fb.html"><span class='context-icon'><i class='fa fa-chrome' aria-hidden='true'></i> <i class='fa fa-windows' aria-hidden='true'></i></span>Modificar descripcion colocando un valor igual al limite maximo de caracteres</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>17:28:59</td>
+                                                    <td>7s 844ms</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="5519b2ee17e322652558e0800219fc73152dc138217fdbfdef7f45506c01dabc.html">Funcionalidades generales de la seccion</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="70991899c4c984c866987906bc64b84c20b102cb8d99da0027878646cfc36fde.html"><span class='context-icon'><i class='fa fa-chrome' aria-hidden='true'></i> <i class='fa fa-windows' aria-hidden='true'></i></span>Filtrar por etiquetas del sistema</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>17:29:07</td>
+                                                    <td>7s 410ms</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="5519b2ee17e322652558e0800219fc73152dc138217fdbfdef7f45506c01dabc.html">Funcionalidades generales de la seccion</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="096d0b4b8158513c2dc9fbd891ee9081ac1c0e0a842cf664d27d2b7e7340ab76.html"><span class='context-icon'><i class='fa fa-chrome' aria-hidden='true'></i> <i class='fa fa-windows' aria-hidden='true'></i></span>Filtrar por etiquetas que no son del sistema</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>17:29:16</td>
+                                                    <td>7s 513ms</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="5519b2ee17e322652558e0800219fc73152dc138217fdbfdef7f45506c01dabc.html">Funcionalidades generales de la seccion</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="2e6a591bc4dce046065d24d1aa2ff4aa62b27a4edd07b57512ac24618ad1c44a.html"><span class='context-icon'><i class='fa fa-chrome' aria-hidden='true'></i> <i class='fa fa-windows' aria-hidden='true'></i></span>Filtrar por todas las etiquetas</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>17:29:24</td>
+                                                    <td>7s 998ms</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="5519b2ee17e322652558e0800219fc73152dc138217fdbfdef7f45506c01dabc.html">Funcionalidades generales de la seccion</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="03888842417821d42993e504345f8caaafd9f66b100927810d849084df8f1af1.html"><span class='context-icon'><i class='fa fa-chrome' aria-hidden='true'></i> <i class='fa fa-windows' aria-hidden='true'></i></span>Items por pagina</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>17:29:32</td>
+                                                    <td>6s 141ms</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="5519b2ee17e322652558e0800219fc73152dc138217fdbfdef7f45506c01dabc.html">Funcionalidades generales de la seccion</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="1b9ecc9dc0a4a21577958e5b3b85e4dbf4cf7c82b7371aadb4470188196318a0.html"><span class='context-icon'><i class='fa fa-chrome' aria-hidden='true'></i> <i class='fa fa-windows' aria-hidden='true'></i></span>Cambiar de pagina</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>17:29:39</td>
+                                                    <td>6s 138ms</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="5519b2ee17e322652558e0800219fc73152dc138217fdbfdef7f45506c01dabc.html">Funcionalidades generales de la seccion</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="095d5767dccce9489de025f47486dfee29856e62a44bd5f7eebe64122d184b5d.html"><span class='context-icon'><i class='fa fa-chrome' aria-hidden='true'></i> <i class='fa fa-windows' aria-hidden='true'></i></span>Buscar un valor valido en la barra de busquedas</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>17:29:45</td>
+                                                    <td>6s 700ms</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="5519b2ee17e322652558e0800219fc73152dc138217fdbfdef7f45506c01dabc.html">Funcionalidades generales de la seccion</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="6a06d5557c2f972280b9a2f129e6a553686ec1e98c2d11c73a5e2c18d1a71783.html"><span class='context-icon'><i class='fa fa-chrome' aria-hidden='true'></i> <i class='fa fa-windows' aria-hidden='true'></i></span>Buscar un valor inexistente en la barra de busquedas</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>17:29:52</td>
+                                                    <td>8s 507ms</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="ef701d72349236cb82b7c39145e98e3090aed282a96a08539854fc8b735fa9a4.html">Importar etiquetas</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="37ba97ecaac6ce741c0d21891439d42e24ee94d86de2b8bdecde287d532dd4e7.html"><span class='context-icon'><i class='fa fa-chrome' aria-hidden='true'></i> <i class='fa fa-windows' aria-hidden='true'></i></span>Importar archivo con formato invalido</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>17:30:02</td>
+                                                    <td>10s 734ms</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="ef701d72349236cb82b7c39145e98e3090aed282a96a08539854fc8b735fa9a4.html">Importar etiquetas</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="a8fc505198eb35759043e77099575b0e29f7eeae1633fcc758538239a1f60ab5.html"><span class='context-icon'><i class='fa fa-chrome' aria-hidden='true'></i> <i class='fa fa-windows' aria-hidden='true'></i></span>Importar un archivo con columnas faltantes</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>17:30:13</td>
+                                                    <td>11s 565ms</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="ef701d72349236cb82b7c39145e98e3090aed282a96a08539854fc8b735fa9a4.html">Importar etiquetas</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="ae32e67f417b3820d422ab804f11da4bf0479384870f039ae01acf55b30cf0a9.html"><span class='context-icon'><i class='fa fa-chrome' aria-hidden='true'></i> <i class='fa fa-windows' aria-hidden='true'></i></span>Importar un archivo con columnas repetidas</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>17:30:25</td>
+                                                    <td>11s 287ms</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="ef701d72349236cb82b7c39145e98e3090aed282a96a08539854fc8b735fa9a4.html">Importar etiquetas</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="35239ff079e61c1201ae3ea29d180c7cbe3e14f7bb35ded715894a926981badc.html"><span class='context-icon'><i class='fa fa-chrome' aria-hidden='true'></i> <i class='fa fa-windows' aria-hidden='true'></i></span>Importar un archivo con columnas extra</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>17:30:37</td>
+                                                    <td>10s 608ms</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="ef701d72349236cb82b7c39145e98e3090aed282a96a08539854fc8b735fa9a4.html">Importar etiquetas</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="821356babc6bfe19eb8c26c690ae4e09db422eff7339dde8f701fed528d198fb.html"><span class='context-icon'><i class='fa fa-chrome' aria-hidden='true'></i> <i class='fa fa-windows' aria-hidden='true'></i></span>Importar un archivo con columnas sin nombre</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>17:30:49</td>
+                                                    <td>11s 352ms</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr class="scenario-result SUCCESS">
+                                                    <td>
+                                                            <a href="ef701d72349236cb82b7c39145e98e3090aed282a96a08539854fc8b735fa9a4.html">Importar etiquetas</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="407cc8e1949dbbd126f7bd44a3c9b641420f7fa43d557f897a9eb9ef1d22d286.html"><span class='context-icon'><i class='fa fa-chrome' aria-hidden='true'></i> <i class='fa fa-windows' aria-hidden='true'></i></span>Importar un archivo con datos validos</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td>17:31:11</td>
+                                                    <td>13s 811ms</td>
+                                                    <td><a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <h3><i class="fas fa-edit"></i> Manual Tests</h3>
+
+                                                No manual tests were recorded
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                        </td>
+
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div id="beforefooter"></div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <span class="version">Serenity BDD version 2.4.34</span>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

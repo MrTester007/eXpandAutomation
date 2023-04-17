@@ -1,0 +1,8 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Importar listas simples","Importar archivo con formato invalido","SUCCESS","2023-04-14T17:33:11.7834385-03:00[America/Montevideo]","0.0","12.57"
+"Importar listas simples","Importar un archivo con columnas faltantes","SUCCESS","2023-04-14T17:33:24.9598539-03:00[America/Montevideo]","0.0","12.7"
+"Importar listas simples","Importar un archivo con columnas repetidas","SUCCESS","2023-04-14T17:33:38.3518466-03:00[America/Montevideo]","0.0","13.92"
+"Importar listas simples","Importar un archivo con columnas extra","SUCCESS","2023-04-14T17:33:52.710932-03:00[America/Montevideo]","0.0","17.79"
+"Importar listas simples","Importar un archivo con columnas sin nombre","SUCCESS","2023-04-14T17:34:11.1904673-03:00[America/Montevideo]","0.0","14.18"
+"Importar listas simples","Importar un archivo con datos invalidos","FAILURE","2023-04-14T17:34:25.8052709-03:00[America/Montevideo]","0.0","15.63"
+"Importar listas simples","Importar un archivo con datos validos","ERROR","2023-04-14T17:34:42.1226225-03:00[America/Montevideo]","0.0","20.92"

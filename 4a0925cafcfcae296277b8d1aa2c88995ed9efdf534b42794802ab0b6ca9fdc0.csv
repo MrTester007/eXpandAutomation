@@ -1,0 +1,5 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Agregar claves","Crear clave con datos validos","SUCCESS","2023-04-14T17:50:33.9850277-03:00[America/Montevideo]","0.0","8.21"
+"Agregar claves","Crear una clave utilizando caracteres especiales","SUCCESS","2023-04-14T17:50:42.8443728-03:00[America/Montevideo]","0.0","10.94"
+"Agregar claves","Crear una clave que utilice el limite de caracteres permitidos","SUCCESS","2023-04-14T17:50:54.46593-03:00[America/Montevideo]","0.0","7.77"
+"Agregar claves","Crear una clave dejando la descripcion vacia","SUCCESS","2023-04-14T17:51:02.6315593-03:00[America/Montevideo]","0.0","11.22"

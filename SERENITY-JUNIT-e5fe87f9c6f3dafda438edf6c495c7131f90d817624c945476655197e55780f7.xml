@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="0" name="Funcionalidades generales de la seccion registro no llame" skipped="0" tests="2" time="16.31" timestamp="2023-04-14 05:45:03"><testcase name="Buscar un registro por numero"/><testcase name="Buscar un registro inexistente"/></testsuite>

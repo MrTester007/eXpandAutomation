@@ -1,0 +1,5 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Modificar localidades","Modificar nombre correctamente","SUCCESS","2023-04-14T17:40:40.3439686-03:00[America/Montevideo]","0.0","7.54"
+"Modificar localidades","Colocar un nombre vacio","SUCCESS","2023-04-14T17:40:48.4042131-03:00[America/Montevideo]","0.0","12.39"
+"Modificar localidades","Modificar nombre dejando el mismo valor que ya tenia","SUCCESS","2023-04-14T17:41:01.5102846-03:00[America/Montevideo]","0.0","8.07"
+"Modificar localidades","Modificar nombre colocando un valor igual al limite maximo de caracteres","SUCCESS","2023-04-14T17:41:10.3212193-03:00[America/Montevideo]","0.0","7.77"

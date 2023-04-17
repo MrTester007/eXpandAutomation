@@ -1,0 +1,4 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Funcionalidades generales de la seccion claves.","Buscar una clave por clave","SUCCESS","2023-04-14T17:52:05.2107262-03:00[America/Montevideo]","0.0","8.32"
+"Funcionalidades generales de la seccion claves.","Buscar una clave por descripcion","SUCCESS","2023-04-14T17:52:14.1822282-03:00[America/Montevideo]","0.0","6.52"
+"Funcionalidades generales de la seccion claves.","Buscar una clave inexistente","SUCCESS","2023-04-14T17:52:21.4085489-03:00[America/Montevideo]","0.0","8.74"

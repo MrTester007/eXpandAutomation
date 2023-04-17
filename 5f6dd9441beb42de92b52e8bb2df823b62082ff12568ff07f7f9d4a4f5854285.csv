@@ -1,0 +1,6 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Modificar registros no llames","Modificar registro correctamente","SUCCESS","2023-04-14T17:44:11.1802769-03:00[America/Montevideo]","0.0","8.06"
+"Modificar registros no llames","Modificar el registro dejandolo vacio","SUCCESS","2023-04-14T17:44:19.8523547-03:00[America/Montevideo]","0.0","12.25"
+"Modificar registros no llames","Modificar registro dejando el mismo valor que ya poseía","SUCCESS","2023-04-14T17:44:32.8595705-03:00[America/Montevideo]","0.0","7.65"
+"Modificar registros no llames","Modificar registro colocando un valor igual al limite maximo de caracteres","SUCCESS","2023-04-14T17:44:41.0791316-03:00[America/Montevideo]","0.0","8.35"
+"Modificar registros no llames","Modificar registro colocando un valor invalido","SUCCESS","2023-04-14T17:44:49.9935749-03:00[America/Montevideo]","0.0","13.36"

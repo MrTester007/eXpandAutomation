@@ -1,0 +1,4 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Editar grupos previamente creados","Editar el grupo colocando una descripcion nueva","SUCCESS","2023-04-14T17:26:35.4978104-03:00[America/Montevideo]","0.0","6.87"
+"Editar grupos previamente creados","Editar el grupo colocando una descripcion que sea igual al limite de caracteres permitidos.","SUCCESS","2023-04-14T17:26:42.909545-03:00[America/Montevideo]","0.0","6.69"
+"Editar grupos previamente creados","Editar grupo dejando la misma descripción.","SUCCESS","2023-04-14T17:26:50.229971-03:00[America/Montevideo]","0.0","6.97"

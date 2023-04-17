@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="0" name="Funcionalidades generales de la seccion pausas." skipped="0" tests="3" time="21.51" timestamp="2023-04-14 05:48:42"><testcase name="Buscar una pausa por DTMF"/><testcase name="Buscar una pausa por descripcion"/><testcase name="Buscar una pausa inexistente"/></testsuite>

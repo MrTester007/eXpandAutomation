@@ -1,0 +1,5 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Funcionalidades generales de la seccion chat interno.","Buscar un grupo por medio de la barra de busqueda","SUCCESS","2023-04-14T17:26:57.638614-03:00[America/Montevideo]","0.0","6.93"
+"Funcionalidades generales de la seccion chat interno.","Buscar un grupo inexistente","SUCCESS","2023-04-14T17:27:05.1953091-03:00[America/Montevideo]","0.0","8.89"
+"Funcionalidades generales de la seccion chat interno.","Desactivar chat interno","SUCCESS","2023-04-14T17:27:14.7700925-03:00[America/Montevideo]","0.0","8.79"
+"Funcionalidades generales de la seccion chat interno.","Activar chat interno","SUCCESS","2023-04-14T17:27:24.3691418-03:00[America/Montevideo]","0.0","7.67"

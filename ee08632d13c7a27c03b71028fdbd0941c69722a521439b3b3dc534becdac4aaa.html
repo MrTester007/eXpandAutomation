@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>Features</title>
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!--[if IE 7]>
+<!--<link rel="stylesheet" href="font-awesome/css/font-awesome-ie7.min.css">-->
+
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/v4-shims.min.css">
+
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><link rel="stylesheet" type="text/css" href="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.css">
+<link rel="stylesheet" type="text/css" href="chartist/dist/chartist.min.css">
+<script src="chartist/dist/chartist.min.js"></script>
+<script src="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.js"></script>
+<!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.20/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.20/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.10.20/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.20/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.20/datatables.bootstrap4.min.css" rel="stylesheet" />
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/><!-- JQuery-UI -->
+<link type="text/css" href="jqueryui/1.11.2-start/jquery-ui.min.css" rel="Stylesheet" />
+<script type="text/javascript" src="jqueryui/1.11.2-start/jquery-ui.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.20/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.20/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.10.20/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.20/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.20/datatables.bootstrap4.min.css" rel="stylesheet" />
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+
+
+
+    <script>
+
+        $(document).ready(function () {
+
+            var scenarioTable = $('.scenario-result-table').DataTable({
+
+                "order": [],
+                "language": {
+                    searchPlaceholder: "Filter",
+                    search: ""
+                }
+            });
+
+            $('.example-table table').DataTable({
+                searching: false,
+                ordering: false,
+                paging: false,
+                info: false
+            });
+
+            $('.example-table-in-scenario table').DataTable({
+                searching: false,
+                ordering: false,
+                paging: false,
+                info: false
+            });
+
+            $('#evidence-table').DataTable(
+                {
+                    searching: false,
+                    ordering: false,
+                    paging: false,
+                    info: false
+                }
+            );
+
+
+            $(".scenario-docs .card-body table").wrap("<div class='table-responsive'></div>");
+
+            $("#requirements-tabs").tabs();
+            $("#test-tabs").tabs();
+
+            var requirementsTree = [{"text":"Funcionalidades generales de la seccion registro no llame","type":"feature","href":"ee08632d13c7a27c03b71028fdbd0941c69722a521439b3b3dc534becdac4aaa.html","nodes":[],"selectable":false,"tags":["\u003ca href\u003d\u0027##beforetable\u0027\u003e\u003ci class\u003d\u0027fa fa-check-circle-o success-icon \u0027 title\u003d\u0027SUCCESS\u0027\u003e\u003c/i\u003e\u003c/a\u003e","\u003cspan class\u003d\u0027feature-count\u0027\u003e2 scenarios\u003c/span\u003e"]}];
+
+            $('#tree').treeview({
+                data: requirementsTree,
+                enableLinks: true,
+                showTags: true,
+                expandIcon: "glyphicon glyphicon-folder-close",
+                collapseIcon: "glyphicon glyphicon-folder-open",
+                emptyIcon: "glyphicon glyphicon-book"
+            });
+
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $(".scenario-docs > div > p").html(function () {
+                var text = $(this).text().trim().split(" ");
+                var first = text.shift();
+                return (text.length > 0 ? "<strong>" + first + "</strong> " : first) + text.join(" ");
+            });
+        });
+    </script>
+</head>
+
+<body class="results-page">
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">eXpand Automation</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+            <a href='index.html'>Home</a> > <a href="capabilities.html">Requirements</a>
+
+                > <a href="18da9e298c5c2056f3abb4d7409098906f203659831783636f891817b32a563d.html">Administration</a>
+                > <a href="818eab0efe99b6672b492bb1927d7268483c457a833dfafed80f7478c035a111.html">Basic</a>
+                > <a href="759574f1333b1581ec6642430abeab9380dec79aa6ab1eadfb4833d1dfeca16e.html">No Call Register</a>
+
+
+                    > <span class="truncate-40">Funcionalidades Generales De La Seccion Registro No Llame</span>
+
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li >
+            <a href="index.html"><i class="fa fa-check-square-o"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="7ea0a5e2d679b9deeda9910ae4a9bcd3a281e0d908303a9e16e486103e98880c.html"><i class="fa fa-comments-o"></i> Capabilities</a>
+        </li>
+        <li >
+            <a href="2a4631d87648e59c428d4cf0e9247f9d286e4679f436ca2ce872e931eb4dfd58.html"><i class="fa fa-comments-o"></i> Stories</a>
+        </li>
+        <li class="active">
+            <a href="#"><i class="fa fa-comments-o"></i> Features</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 14-04-2023 17:45</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+    <div id="beforetable"></div>
+    <div id="results-dashboard">
+        <div class="table">
+            <div class=row">
+                <div class="col-sm-12">
+                    <div>
+                        <div clas="table">
+                            <div class="row">
+                                <div class="col-sm-8">
+                                        <span>
+                                            <h2><i class="fa fa-book"></i> Feature:  Funcionalidades Generales De La Seccion Registro No Llame</h2>
+                                        </span>
+                                    </div>
+                                        <div class="col-sm-4">
+                                        <span class="feature-tags">
+                                                <p class="tag">
+                                                    <span class="badge tag-badge" style="background:default;">
+                                                        <i class="fa fa-tag"></i>&nbsp;<a class="tagLink"
+                                                                                          style="background:default;"
+                                                                                          href="18da9e298c5c2056f3abb4d7409098906f203659831783636f891817b32a563d.html">Administration
+                                                        (theme)</a>
+                                                    </span>
+                                                </p>
+                                                <p class="tag">
+                                                    <span class="badge tag-badge" style="background:default;">
+                                                        <i class="fa fa-tag"></i>&nbsp;<a class="tagLink"
+                                                                                          style="background:default;"
+                                                                                          href="759574f1333b1581ec6642430abeab9380dec79aa6ab1eadfb4833d1dfeca16e.html">No Call Register
+                                                        (theme)</a>
+                                                    </span>
+                                                </p>
+                                                <p class="tag">
+                                                    <span class="badge tag-badge" style="background:default;">
+                                                        <i class="fa fa-tag"></i>&nbsp;<a class="tagLink"
+                                                                                          style="background:default;"
+                                                                                          href="818eab0efe99b6672b492bb1927d7268483c457a833dfafed80f7478c035a111.html">Basic
+                                                        (theme)</a>
+                                                    </span>
+                                                </p>
+                                        </span>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                            <div class="requirementNarrativeTitle">
+                                Como agente logueado en el sistema<br />
+Quiero poder utilizar las funcionalidades generales<br />
+Para organizar, filtrar y configurar mis registros
+                            </div>
+
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-sm-12">
+
+                        <!-- Requirements result tabs -->
+                        <ul class="nav nav-tabs">
+                            <li class="active">
+                                <a data-toggle="tab" href="#specs"><i class="fas fa-comments"></i> Specifications</a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#results"><i class="fas fa-tachometer-alt"></i> Test Results</a>
+                            </li>
+                        </ul>
+
+                        <!-- Specifications and Results tabs -->
+                        <div class="card border">
+                            <div class="tab-content" id="pills-tabContent">
+                                <div id="specs" class="tab-pane fade in active">
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+
+                                                    <!--- TOC --->
+                                                    <div id="toc">
+                                                        <h3>Overview</h3>
+                                                        <table class="table" id="toc-table">
+                                                                        <tr>
+                                                                            <td style="width:95%;" class="toc-title">
+                                                                                <span class="orphan-scenario-toc-entry">
+                                                                                    <a href="#438e33e0df091b35923e7dfb9e702191bd453dd64cf9c19800186a38ccef2685" title="View scenario details">
+                                                                                        <i class="far fa-comment-dots"></i> Scenario: Buscar un registro por numero
+                                                                                    </a>
+                                                                                </span>
+                                                                            </td>
+                                                                            <td style="width:5%;">
+                                                                                <table>
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                               href="e5fe87f9c6f3dafda438edf6c495c7131f90d817624c945476655197e55780f7.html"
+                                                                                               title="View test results">
+                                                                                                <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                                                                </a>
+
+
+                                                                                        </td>
+                                                                                            <td>
+                                                                                                <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                                   href="e5fe87f9c6f3dafda438edf6c495c7131f90d817624c945476655197e55780f7.html"
+                                                                                                   title="View test results">
+                                                                                                    <i class="fas fa-search-plus"></i>
+                                                                                                </a>
+                                                                                            </td>
+                                                                                    </tr>
+                                                                                </table>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td style="width:95%;" class="toc-title">
+                                                                                <span class="orphan-scenario-toc-entry">
+                                                                                    <a href="#acfe3bffa6eb0bceb9dcfa664f0bb0440dcadecca11faddaa460c3bc386d826f" title="View scenario details">
+                                                                                        <i class="far fa-comment-dots"></i> Scenario: Buscar un registro inexistente
+                                                                                    </a>
+                                                                                </span>
+                                                                            </td>
+                                                                            <td style="width:5%;">
+                                                                                <table>
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                               href="88c1e0080a31111747f65e36a96712fd924ccd0d6ac93e8632179229ab4f2634.html"
+                                                                                               title="View test results">
+                                                                                                <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                                                                </a>
+
+
+                                                                                        </td>
+                                                                                            <td>
+                                                                                                <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                                   href="88c1e0080a31111747f65e36a96712fd924ccd0d6ac93e8632179229ab4f2634.html"
+                                                                                                   title="View test results">
+                                                                                                    <i class="fas fa-search-plus"></i>
+                                                                                                </a>
+                                                                                            </td>
+                                                                                    </tr>
+                                                                                </table>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td style="width:95%;" class="toc-title">
+                                                                                <span class="orphan-scenario-toc-entry">
+                                                                                    <a href="#23a3c3a4251fee50cf422d983bbbaa0b95c1f8f5c109fae3ff839047a75e2df0" title="View scenario details">
+                                                                                        <i class="far fa-comment-dots"></i> Scenario: Organizar grupos por Numero
+                                                                                    </a>
+                                                                                </span>
+                                                                            </td>
+                                                                            <td style="width:5%;">
+                                                                                <table>
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                                
+                                                                                                
+
+
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </table>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td style="width:95%;" class="toc-title">
+                                                                                <span class="orphan-scenario-toc-entry">
+                                                                                    <a href="#cf70b1f395e8d72a43ba05dd9cd19aca1420cb8f87e7549b5ed86598aa173615" title="View scenario details">
+                                                                                        <i class="far fa-comment-dots"></i> Scenario: Organizar grupos por fecha de creacion
+                                                                                    </a>
+                                                                                </span>
+                                                                            </td>
+                                                                            <td style="width:5%;">
+                                                                                <table>
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                                
+                                                                                                
+
+
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </table>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td style="width:95%;" class="toc-title">
+                                                                                <span class="orphan-scenario-toc-entry">
+                                                                                    <a href="#b8acf029598d9254c92bd61c0972aaad68551601a4cbe9a071207aed80f68e57" title="View scenario details">
+                                                                                        <i class="far fa-comment-dots"></i> Scenario: Organizar grupos por fecha de actualizacion
+                                                                                    </a>
+                                                                                </span>
+                                                                            </td>
+                                                                            <td style="width:5%;">
+                                                                                <table>
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                                
+                                                                                                
+
+
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </table>
+                                                                            </td>
+                                                                        </tr>
+                                                        </table>
+                                                    </div>
+                                                    <!--- END OF TOC --->
+
+                                                    <h3>Scenarios</h3>
+
+                                                        <a name="dc84f2f0-345e-49c5-ad55-0ba634349e0a" ></a>
+
+
+                                                            <div class="scenario-docs card" id="438e33e0df091b35923e7dfb9e702191bd453dd64cf9c19800186a38ccef2685">
+                                                                <div class="scenario-docs card-header success"
+                                                                     style="min-height:1.5em;">
+                                                                    <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="e5fe87f9c6f3dafda438edf6c495c7131f90d817624c945476655197e55780f7.html"
+                                                                   title="View test results">Scenario: Buscar un registro por numero</a>
+                                                            </span>
+                                                                        <span class="scenario-result-icon">
+                                                                
+
+                                                                                <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                            </span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="scenario-docs card-body">
+                                                                        <p>Given Un agente que ingresa a la seccion de registros no llames</p>
+                                                                        <p>When El agente introduce el numero de un registro en la barra de busqueda</p>
+                                                                        <p>Then La pagina muestra los registros que coincidan con el numero buscado por el agente</p>
+                                                                    <div class="examples">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="scenario-docs card" id="acfe3bffa6eb0bceb9dcfa664f0bb0440dcadecca11faddaa460c3bc386d826f">
+                                                                <div class="scenario-docs card-header success"
+                                                                     style="min-height:1.5em;">
+                                                                    <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="88c1e0080a31111747f65e36a96712fd924ccd0d6ac93e8632179229ab4f2634.html"
+                                                                   title="View test results">Scenario: Buscar un registro inexistente</a>
+                                                            </span>
+                                                                        <span class="scenario-result-icon">
+                                                                
+
+                                                                                <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                            </span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="scenario-docs card-body">
+                                                                        <p>Given Un agente que ingresa a la seccion de registros no llames</p>
+                                                                        <p>When El agente introduce el numero de un registro inexistente en la barra de busqueda</p>
+                                                                        <p>Then La tabla no muestra ningún resultado</p>
+                                                                    <div class="examples">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="scenario-docs card" id="23a3c3a4251fee50cf422d983bbbaa0b95c1f8f5c109fae3ff839047a75e2df0">
+                                                                <div class="scenario-docs card-header undefined"
+                                                                     style="min-height:1.5em;">
+                                                                    <div>
+                                                            <span class="scenario-heading">
+                                                                <a href=""
+                                                                   title="View test results">Scenario: Organizar grupos por Numero</a>
+                                                            </span>
+                                                                        <span class="scenario-result-icon">
+                                                                
+
+                                                                                <i class="fas fa-pause"
+                                                                                   title="No test has been implemented yet"></i>
+                                                            </span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="scenario-docs card-body">
+                                                                        <p>Given Un agente que ingresa a la seccion de registros no llames</p>
+                                                                        <p>When El agente da click sobre el boton para organizar los registros por numero</p>
+                                                                        <p>Then Los registros se reorganizan por su numero</p>
+                                                                    <div class="examples">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="scenario-docs card" id="cf70b1f395e8d72a43ba05dd9cd19aca1420cb8f87e7549b5ed86598aa173615">
+                                                                <div class="scenario-docs card-header undefined"
+                                                                     style="min-height:1.5em;">
+                                                                    <div>
+                                                            <span class="scenario-heading">
+                                                                <a href=""
+                                                                   title="View test results">Scenario: Organizar grupos por fecha de creacion</a>
+                                                            </span>
+                                                                        <span class="scenario-result-icon">
+                                                                
+
+                                                                                <i class="fas fa-pause"
+                                                                                   title="No test has been implemented yet"></i>
+                                                            </span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="scenario-docs card-body">
+                                                                        <p>Given Un agente que ingresa a la seccion de registros no llames</p>
+                                                                        <p>When El agente da click sobre el boton para organizar los registros por fecha de creacion</p>
+                                                                        <p>Then Los registros se reorganizan por su fecha de creacion</p>
+                                                                    <div class="examples">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="scenario-docs card" id="b8acf029598d9254c92bd61c0972aaad68551601a4cbe9a071207aed80f68e57">
+                                                                <div class="scenario-docs card-header undefined"
+                                                                     style="min-height:1.5em;">
+                                                                    <div>
+                                                            <span class="scenario-heading">
+                                                                <a href=""
+                                                                   title="View test results">Scenario: Organizar grupos por fecha de actualizacion</a>
+                                                            </span>
+                                                                        <span class="scenario-result-icon">
+                                                                
+
+                                                                                <i class="fas fa-pause"
+                                                                                   title="No test has been implemented yet"></i>
+                                                            </span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="scenario-docs card-body">
+                                                                        <p>Given Un agente que ingresa a la seccion de registros no llames</p>
+                                                                        <p>When El agente da click sobre el boton para organizar los registros por fecha de actualizacion</p>
+                                                                        <p>Then Los registros se reorganizan por su fecha de actualizacion</p>
+                                                                    <div class="examples">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="results" class="tab-pane fade">
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+
+                                                <div style="width:300px;" class="chart-container automated-and-manual-results">
+                                                    <div class="ct-chart ct-square"></div>
+                                                </div>
+                                                <script>
+
+                                                    var labels = ['100%', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '];
+                                                    // Our series array that contains series objects or in this case series data arrays
+
+                                                    var series = [{meta: 'Passing tests (automated)', value: 2}, {meta: 'Passing tests (manual)', value: 0}, {meta: 'Pending tests (automated)', value: 0}, {meta: 'Pending tests (manual)', value: 0}, {meta: 'Ignored tests (automated)', value: 0}, {meta: 'Ignored tests (manual)', value: 0}, {meta: 'Skipped tests (automated)', value: 0}, {meta: 'Skipped tests (manual)', value: 0}, {meta: 'Failing tests (automated)', value: 0}, {meta: 'Failing tests (manual)', value: 0}, {meta: 'Broken tests (automated)', value: 0}, {meta: 'Broken tests (manual)', value: 0}, {meta: 'Compromised tests (automated)', value: 0}, {meta: 'Compromised tests (manual)', value: 0}];
+
+                                                    // As options we currently only set a static size of 300x200 px. We can also omit this and use aspect ratio containers
+                                                    // as you saw in the previous example
+                                                    var options = {
+                                                        width: 350,
+                                                        height: 300
+                                                    };
+
+                                                    $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+                                                        new Chartist.Pie('.ct-chart', {
+                                                            series: series,
+                                                            labels: labels,
+                                                        }, {
+                                                            donut: true,
+                                                            donutWidth: 60,
+                                                            donutSolid: true,
+                                                            startAngle: 270,
+                                                            showLabel: true
+                                                        }, options);
+                                                    });
+
+                                                </script>
+                                            </div>
+                                            <div class="col-sm-8">
+
+                                                    <table class="table">
+                                                        <thead>
+                                                        <tr>
+                                                            <th scope="col">Scenario Results (including rows of test
+                                                                data)
+                                                            </th>
+                                                            <th scope="col" colspan="2" class="automated-stats">
+                                                                Automated
+                                                            </th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        <tr>
+                                                                <td class="aggregate-result-count">
+                                                                    <a href="825864d81bd27eb7cf23f8a0e09096b2b6cbe1cdf1e5ee045dabd546c023c169.html"><i
+                                                                                class='fa fa-check-circle-o success-icon'></i>&nbsp;Passing</a>
+                                                                </td>
+                                                            <td class="automated-stats">2</td>
+                                                            <td class="automated-stats">100%</td>
+                                                        </tr>
+                                                        <tr>
+                                                                <td class="aggregate-result-count"><i
+                                                                            class='fa fa-stop-circle-o pending-icon'></i>&nbsp;Pending
+                                                                </td>
+                                                            <td class="automated-stats">0</td>
+                                                            <td class="automated-stats"> </td>
+                                                        </tr>
+                                                        <tr>
+                                                                <td class="aggregate-result-count"><i
+                                                                            class='fa fa-ban ignored-icon'></i>&nbsp;Ignored
+                                                                </td>
+                                                            <td class="automated-stats">0</td>
+                                                            <td class="automated-stats"> </td>
+                                                        </tr>
+                                                        <tr>
+                                                                <td class="aggregate-result-count"><i
+                                                                            class='fa fa-fast-forward skip-icon'></i>&nbsp;Skipped
+                                                                </td>
+                                                            <td class="automated-stats">0</td>
+                                                            <td class="automated-stats"> </td>
+                                                        </tr>
+                                                        <tr>
+                                                                    <td colspan="3"><i
+                                                                                class='fa fa-times failure-icon'></i>&nbsp;<em>Unsuccessful</em></a>
+                                                                    </td>
+
+                                                        </tr>
+
+                                                        <tr>
+                                                                <td class="aggregate-result-count indented-error-category">
+                                                                    <i
+                                                                            class='fa fa-times-circle failure-icon'></i>&nbsp;Failed
+                                                                </td>
+                                                            <td class="automated-stats">0</td>
+                                                            <td class="automated-stats"> </td>
+                                                        <tr>
+                                                                <td class="aggregate-result-count indented-error-category">
+                                                                    <i
+                                                                            class='fa fa-exclamation-triangle error-icon'></i>&nbsp;Broken
+                                                                </td>
+                                                            <td class="automated-stats">0</td>
+                                                            <td class="automated-stats"> </td>
+                                                        <tr>
+                                                                <td class="aggregate-result-count indented-error-category">
+                                                                    <i
+                                                                            class='fa fa-chain-broken compromised-icon'></i>&nbsp;Compromised
+                                                                </td>
+                                                            <td class="automated-stats">0</td>
+                                                            <td class="automated-stats"> </td>
+                                                        </tr>
+                                                        <tr class="summary-stats">
+                                                            <td class="aggregate-result-count">Total</td>
+                                                            <td class="automated-stats">2</td>
+                                                            <td class="automated-stats"></td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <table class="table">
+                                                        <thead>
+                                                        <tr>
+                                                            <th>Execution Time</th>
+                                                            <th>Clock Time</th>
+                                                            <th>Fastest Test</th>
+                                                            <th>Slowest Test</th>
+                                                            <th>Average Execution Time</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        <tr>
+                                                            <td>16s</td>
+                                                            <td>7s</td>
+                                                            <td>7s</td>
+                                                            <td>9s</td>
+                                                            <td>8s</td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <h3><i class="fas fa-cogs"></i> Automated Tests</h3>
+
+                                                        <table class="scenario-result-table table"
+                                                               id="scenario-results">
+                                                            <thead>
+                                                            <tr>
+                                                                <th class="test-name-column">Scenario</th>
+                                                                <th>Steps</th>
+                                                                <th>Start Time</th>
+                                                                <th>Duration</th>
+                                                                <th>Result</th>
+                                                            </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr class="scenario-result SUCCESS">
+                                                                    <td>
+                                                                            <a href="e5fe87f9c6f3dafda438edf6c495c7131f90d817624c945476655197e55780f7.html">Buscar un registro por numero</a>
+                                                                    </td>
+                                                                    <td>3</td>
+                                                                    <td> </td>
+                                                                    <td> </td>
+                                                                    <td>
+                                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                                                style="display:none">SUCCESS</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr class="scenario-result SUCCESS">
+                                                                    <td>
+                                                                            <a href="88c1e0080a31111747f65e36a96712fd924ccd0d6ac93e8632179229ab4f2634.html">Buscar un registro inexistente</a>
+                                                                    </td>
+                                                                    <td>3</td>
+                                                                    <td> </td>
+                                                                    <td> </td>
+                                                                    <td>
+                                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                                                style="display:none">SUCCESS</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr class="scenario-result UNDEFINED">
+                                                                    <td>
+                                                                            Organizar grupos por Numero
+                                                                    </td>
+                                                                    <td>3</td>
+                                                                    <td> </td>
+                                                                    <td> </td>
+                                                                    <td>
+                                                                            <i class="fas fa-pause"
+                                                                               title="No test has been implemented yet"></i>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr class="scenario-result UNDEFINED">
+                                                                    <td>
+                                                                            Organizar grupos por fecha de creacion
+                                                                    </td>
+                                                                    <td>3</td>
+                                                                    <td> </td>
+                                                                    <td> </td>
+                                                                    <td>
+                                                                            <i class="fas fa-pause"
+                                                                               title="No test has been implemented yet"></i>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr class="scenario-result UNDEFINED">
+                                                                    <td>
+                                                                            Organizar grupos por fecha de actualizacion
+                                                                    </td>
+                                                                    <td>3</td>
+                                                                    <td> </td>
+                                                                    <td> </td>
+                                                                    <td>
+                                                                            <i class="fas fa-pause"
+                                                                               title="No test has been implemented yet"></i>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <h3><i class="fas fa-edit"></i> Manual Tests</h3>
+
+                                                        No manual tests were recorded
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <span class="version">Serenity BDD version 2.4.34</span>
+                    </div>
+                </div>
+            </div>
+</body>
+</html>

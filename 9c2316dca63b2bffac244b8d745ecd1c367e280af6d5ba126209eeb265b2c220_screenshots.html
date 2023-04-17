@@ -1,0 +1,270 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Screenshots</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="bootstrap-icons/bootstrap-icons.css">
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.13.1/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.13.1/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.13.1/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/>
+<!--CHART.JS-->
+<script src="chartjs/chart.js"></script>
+<script src="chartjs/chartjs-plugin-datalabels@2.0.0"></script>
+<script src="chartjs/patternomaly.min.js"></script>
+<script>
+    // Register the plugin to all charts:
+    Chart.register(ChartDataLabels);
+</script>
+<!-- Nivo Slider -->
+<link rel="stylesheet" href="nivo-slider/3.2/nivo-slider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="nivo-slider/3.2/themes/default/default.css" type="text/css" media="screen" />
+<script src="nivo-slider/3.2/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+
+        var screenshotIndex = getUrlVars()["screenshot"];
+
+        $(window).load(function () {
+            $('#slider').nivoSlider({
+                startSlide: screenshotIndex,
+                effect: 'fade',
+                animSpeed: 200,
+                manualAdvance: true
+            });
+        });
+
+        $(window).keydown(function(e) {
+            switch(e.which) {
+                case 37:
+                    $('a.nivo-prevNav').click();
+                    break;
+                case 39:
+                    $('a.nivo-nextNav').click();
+                    break;
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">eXpand Automation</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+                <a href="index.html">Home</a>
+                > <span class="truncate-40"><a
+                    href="74bc663d55970ea9be6a5022dbdcae6aedc5b1dfd3e36524c9fa467fb66b4a81.html">Eliminar Listas</a></span>
+                > <span class="truncate-60"><a
+                    href="9c2316dca63b2bffac244b8d745ecd1c367e280af6d5ba126209eeb265b2c220.html">Eliminar lista de tipo rango </a></span>
+                > Screenshots
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="bi bi-journal-check"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="bi bi-journal-text"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="dafb266f68444cb7f2451c923d70c1428ac45470c361842b818e6daa9bcd4fa8.html"><i class="bi bi-chat-text"></i> Themes</a>
+        </li>
+        <li >
+            <a href="7ea0a5e2d679b9deeda9910ae4a9bcd3a281e0d908303a9e16e486103e98880c.html"><i class="bi bi-chat-text"></i> Capabilities</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="bi bi-chat-text"></i> Features</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 14-04-2023 17:37</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+
+    <div id="contentbody">
+        <div class="titlebar">
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td>
+                            <div>
+                                <h3 class="discreet-story-header">
+                                    <i class="fs-2 bi bi-chat-left-quote large-icon"></i>
+                                    <span class="story-header-title">Eliminar Listas </span>
+                                    <span class="badge tag-badge" style="">Feature</span>
+                                </h3>
+
+                                <div class="discreet-requirement-narrative-title">
+                                Como agente registrado en el sistema quiero poder eliminar listas<br />
+para poder mantener una mejor organizacion
+                                </div>
+                            </div>
+
+                        </td>
+                        <td valign="top" align="right">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td colspan="2" class="test-title-bar">
+                            <span class="outcome-icon"><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon fa-2x' title='SUCCESS'></i></a></span>
+                            <span class="test-case-title">
+                                <span class="success-color">Eliminar lista de tipo rango
+                                    <span class="related-issue-title"></span>
+                                </span>
+                            </span>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+
+
+    <div id="beforetable"></div>
+    <div id="contenttilttle">
+        <div class="slider-wrapper theme-default">
+            <div id="slider">
+                <img src="5dfebf6541f25dd248fd12606f2521a9d479a66182d1c435e157d0c41e18ffad.png" title=" Given El agente ingresa a la seccion de listas" width="1920"/>
+                <img src="5dfebf6541f25dd248fd12606f2521a9d479a66182d1c435e157d0c41e18ffad.png" title=" Nahuel opens the Login pom" width="1920"/>
+                <img src="5dfebf6541f25dd248fd12606f2521a9d479a66182d1c435e157d0c41e18ffad.png" title=" Nahuel enters 'nahuel.silvera' into The input for the username" width="1920"/>
+                <img src="3864f3c9eaa38186df8b7950e4c65576e11496dfb399aefbf2b6a591fec4028f.png" title=" Nahuel enters 'nahuel.silvera' into The input for the username (completed)" width="1920"/>
+                <img src="3864f3c9eaa38186df8b7950e4c65576e11496dfb399aefbf2b6a591fec4028f.png" title=" Nahuel enters 'abcd1234' into The input for the password" width="1920"/>
+                <img src="c53c477daa1f692fd88dbd4805b2f80e6911837125680ec66e2f73faa204e27f.png" title=" Nahuel enters 'abcd1234' into The input for the password (completed)" width="1920"/>
+                <img src="c53c477daa1f692fd88dbd4805b2f80e6911837125680ec66e2f73faa204e27f.png" title=" Nahuel clicks on The button for login" width="1920"/>
+                <img src="d6a3fd9a489946bbba096904c79f5456d8c8c2de83f0e0b9ed1ebaf29ab613d0.png" title=" Nahuel clicks on The button for login (completed)" width="1920"/>
+                <img src="d6a3fd9a489946bbba096904c79f5456d8c8c2de83f0e0b9ed1ebaf29ab613d0.png" title=" Nahuel go to the sectionListas" width="1920"/>
+                <img src="d6a3fd9a489946bbba096904c79f5456d8c8c2de83f0e0b9ed1ebaf29ab613d0.png" title=" Nahuel open the side menu" width="1920"/>
+                <img src="bdc073ae87fb14a76262d3796ba0e5bbb872e50fb01656e92040c4d116f2a493.png" title=" Nahuel clicks on The button for access to the tools menu" width="1920"/>
+                <img src="0073f43399ddb71c69c2bf60e90a966b99da92b5524f348859e73f0c0c8ccf2f.png" title=" Nahuel clicks on The button for access to the tools menu (completed)" width="1920"/>
+                <img src="0073f43399ddb71c69c2bf60e90a966b99da92b5524f348859e73f0c0c8ccf2f.png" title=" Nahuel open the side menu (completed)" width="1920"/>
+                <img src="0073f43399ddb71c69c2bf60e90a966b99da92b5524f348859e73f0c0c8ccf2f.png" title=" Nahuel enters 'Listas' into The search bar" width="1920"/>
+                <img src="de631917a61bf45eb429782e8fc1dd91ff2c4f7cf49ceb48eb1ea6f7b21e457a.png" title=" Nahuel enters 'Listas' into The search bar (completed)" width="1920"/>
+                <img src="de631917a61bf45eb429782e8fc1dd91ff2c4f7cf49ceb48eb1ea6f7b21e457a.png" title=" Nahuel clicks on The button for go to the lists section" width="1920"/>
+                <img src="a7a5e3aafa73527d8055dc81a03c23e37cc7c45d9b96050ab23d8f87f37bbbe3.png" title=" Nahuel clicks on The button for go to the lists section (completed)" width="1920"/>
+                <img src="a7a5e3aafa73527d8055dc81a03c23e37cc7c45d9b96050ab23d8f87f37bbbe3.png" title=" Nahuel go to the sectionListas (completed)" width="1920"/>
+                <img src="a7a5e3aafa73527d8055dc81a03c23e37cc7c45d9b96050ab23d8f87f37bbbe3.png" title=" Given El agente ingresa a la seccion de listas (completed)" width="1920"/>
+                <img src="49e347c7355f08f441367588db2ab2e9851dbca8954528e47f9922f3c8843457.png" title=" When El agente elimina una lista de tipo rango" width="1920"/>
+                <img src="49e347c7355f08f441367588db2ab2e9851dbca8954528e47f9922f3c8843457.png" title=" Nahuel clicks on El boton para ingresar a los filtros" width="1920"/>
+                <img src="73f232f7025dba5ac59666e3546481634511479949bc9cce6fff205b09e6ae54.png" title=" Nahuel clicks on El boton para ingresar a los filtros (completed)" width="1920"/>
+                <img src="73f232f7025dba5ac59666e3546481634511479949bc9cce6fff205b09e6ae54.png" title=" Drop down mat select input" width="1920"/>
+                <img src="dc8f338328473df24219b1a4c432fc0f04870c4ae8cda620826e42a1b434f92c.png" title=" Nahuel clicks on El dropdown para seleccionar el tipo de filtro" width="1920"/>
+                <img src="b4cb5a44fec8d44acca0a0f02c0655561d94fc6393bc0cebf4eacc5651e77b53.png" title=" Nahuel clicks on El dropdown para seleccionar el tipo de filtro (completed)" width="1920"/>
+                <img src="b4cb5a44fec8d44acca0a0f02c0655561d94fc6393bc0cebf4eacc5651e77b53.png" title=" Nahuel clicks on La opcion que contiene el dropdown" width="1920"/>
+                <img src="f9b2f680110a4bb98dec7898322c983bac571b71014a6acece9f09fc1872e32a.png" title=" Nahuel clicks on La opcion que contiene el dropdown (completed)" width="1920"/>
+                <img src="f9b2f680110a4bb98dec7898322c983bac571b71014a6acece9f09fc1872e32a.png" title=" Drop down mat select input (completed)" width="1920"/>
+                <img src="f9b2f680110a4bb98dec7898322c983bac571b71014a6acece9f09fc1872e32a.png" title=" Nahuel clicks on El boton para aplicar los filtros" width="1920"/>
+                <img src="9a02d5b7b58a3add6959fff3e53a729d568e33bdd023188c5e2cf5fe50d04cfa.png" title=" Nahuel clicks on El boton para aplicar los filtros (completed)" width="1920"/>
+                <img src="9a02d5b7b58a3add6959fff3e53a729d568e33bdd023188c5e2cf5fe50d04cfa.png" title=" Nahuel clicks on El boton para mostrar las opciones de cada lista" width="1920"/>
+                <img src="b9fb5082d7cd51833a156f490c6630bbdaec7908c778abeaaab5e25ff8c71c4a.png" title=" Nahuel clicks on El boton para mostrar las opciones de cada lista (completed)" width="1920"/>
+                <img src="b9fb5082d7cd51833a156f490c6630bbdaec7908c778abeaaab5e25ff8c71c4a.png" title=" Nahuel clicks on El boton para eliminar la lista" width="1920"/>
+                <img src="ac7f659490ec03071e5a45d8dc8620a0b8f89d2cbe46adaa8bc030840535bf2b.png" title=" Nahuel clicks on El boton para eliminar la lista (completed)" width="1920"/>
+                <img src="ac7f659490ec03071e5a45d8dc8620a0b8f89d2cbe46adaa8bc030840535bf2b.png" title=" Nahuel clicks on The button to confirm the deletion of the label" width="1920"/>
+                <img src="4447eeef77a0ae65fc4cc04012042a38272b6461d0913712f8fa8eeb4153db88.png" title=" Nahuel clicks on The button to confirm the deletion of the label (completed)" width="1920"/>
+                <img src="4447eeef77a0ae65fc4cc04012042a38272b6461d0913712f8fa8eeb4153db88.png" title=" When El agente elimina una lista de tipo rango (completed)" width="1920"/>
+                <img src="42a96ef1f0ffb6a8e6d3bd03f14ea28c02ec6edd23d7552dfc5c08f8d48e8a4e.png" title=" Then La lista ya no forma parte del grill de registros" width="1920"/>
+                <img src="42a96ef1f0ffb6a8e6d3bd03f14ea28c02ec6edd23d7552dfc5c08f8d48e8a4e.png" title=" Nahuel clicks on The button for use all filters" width="1920"/>
+                <img src="8ebb281608090ac52128a7d4205b1fa84f83227bff37371efae8c6af31867ed3.png" title=" Nahuel clicks on The button for use all filters (completed)" width="1920"/>
+                <img src="8ed58a1f8c4244dd48d1a6630f157efb26484a955e0585bb3dedec9c176f6d1d.png" title=" Then La lista ya no forma parte del grill de registros (completed): <span class='success-color'>SUCCESS</span>" width="1920"/>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div id="beforefooter"></div>
+<div id="bottomfooter">
+    <span class="version">Serenity BDD version 3.6.12</span>
+</div>
+</body>
+</html>

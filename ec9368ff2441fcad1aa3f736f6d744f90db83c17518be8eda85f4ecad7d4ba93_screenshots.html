@@ -1,0 +1,260 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Screenshots</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="bootstrap-icons/bootstrap-icons.css">
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.13.1/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.13.1/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.13.1/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/>
+<!--CHART.JS-->
+<script src="chartjs/chart.js"></script>
+<script src="chartjs/chartjs-plugin-datalabels@2.0.0"></script>
+<script src="chartjs/patternomaly.min.js"></script>
+<script>
+    // Register the plugin to all charts:
+    Chart.register(ChartDataLabels);
+</script>
+<!-- Nivo Slider -->
+<link rel="stylesheet" href="nivo-slider/3.2/nivo-slider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="nivo-slider/3.2/themes/default/default.css" type="text/css" media="screen" />
+<script src="nivo-slider/3.2/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+
+        var screenshotIndex = getUrlVars()["screenshot"];
+
+        $(window).load(function () {
+            $('#slider').nivoSlider({
+                startSlide: screenshotIndex,
+                effect: 'fade',
+                animSpeed: 200,
+                manualAdvance: true
+            });
+        });
+
+        $(window).keydown(function(e) {
+            switch(e.which) {
+                case 37:
+                    $('a.nivo-prevNav').click();
+                    break;
+                case 39:
+                    $('a.nivo-nextNav').click();
+                    break;
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">eXpand Automation</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+                <a href="index.html">Home</a>
+                > <span class="truncate-40"><a
+                    href="673c5e2dfe62496e821d8c5ce63e57d8bb407c5338b255b92eaf3c081eb10943.html">Editar Grupos Previamente Creados</a></span>
+                > <span class="truncate-60"><a
+                    href="ec9368ff2441fcad1aa3f736f6d744f90db83c17518be8eda85f4ecad7d4ba93.html">Editar el grupo colocando una descripcion que sea igual al limite de caracteres permitidos. </a></span>
+                > Screenshots
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="bi bi-journal-check"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="bi bi-journal-text"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="dafb266f68444cb7f2451c923d70c1428ac45470c361842b818e6daa9bcd4fa8.html"><i class="bi bi-chat-text"></i> Themes</a>
+        </li>
+        <li >
+            <a href="7ea0a5e2d679b9deeda9910ae4a9bcd3a281e0d908303a9e16e486103e98880c.html"><i class="bi bi-chat-text"></i> Capabilities</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="bi bi-chat-text"></i> Features</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 14-04-2023 17:26</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+
+    <div id="contentbody">
+        <div class="titlebar">
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td>
+                            <div>
+                                <h3 class="discreet-story-header">
+                                    <i class="fs-2 bi bi-chat-left-quote large-icon"></i>
+                                    <span class="story-header-title">Editar Grupos Previamente Creados </span>
+                                    <span class="badge tag-badge" style="">Feature</span>
+                                </h3>
+
+                                <div class="discreet-requirement-narrative-title">
+                                Como agente registrado en el sistema, quiero poder modificar grupos existentes, para darles un nuevo uso
+                                </div>
+                            </div>
+
+                        </td>
+                        <td valign="top" align="right">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td colspan="2" class="test-title-bar">
+                            <span class="outcome-icon"><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon fa-2x' title='SUCCESS'></i></a></span>
+                            <span class="test-case-title">
+                                <span class="success-color">Editar el grupo colocando una descripcion que sea igual al limite de caracteres permitidos.
+                                    <span class="related-issue-title"></span>
+                                </span>
+                            </span>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+
+
+    <div id="beforetable"></div>
+    <div id="contenttilttle">
+        <div class="slider-wrapper theme-default">
+            <div id="slider">
+                <img src="5dfebf6541f25dd248fd12606f2521a9d479a66182d1c435e157d0c41e18ffad.png" title=" Given Un agente que ingresa a la seccion de Chat Interno" width="1920"/>
+                <img src="5dfebf6541f25dd248fd12606f2521a9d479a66182d1c435e157d0c41e18ffad.png" title=" Nahuel opens the Login pom" width="1920"/>
+                <img src="5dfebf6541f25dd248fd12606f2521a9d479a66182d1c435e157d0c41e18ffad.png" title=" Nahuel enters 'nahuel.silvera' into The input for the username" width="1920"/>
+                <img src="6bd0903f521f415b72f62c105a5f669aa1c16ce2272466e05fe7d57966069bd5.png" title=" Nahuel enters 'nahuel.silvera' into The input for the username (completed)" width="1920"/>
+                <img src="6bd0903f521f415b72f62c105a5f669aa1c16ce2272466e05fe7d57966069bd5.png" title=" Nahuel enters 'abcd1234' into The input for the password" width="1920"/>
+                <img src="8d7552eaa378b4110d13557124c7badebbed22ff191b09d740523412b299b122.png" title=" Nahuel enters 'abcd1234' into The input for the password (completed)" width="1920"/>
+                <img src="8d7552eaa378b4110d13557124c7badebbed22ff191b09d740523412b299b122.png" title=" Nahuel clicks on The button for login" width="1920"/>
+                <img src="c5365d8919c686ffa6a35c2b40d87543cab103baf893ca5f0539f9e62a85c6f4.png" title=" Nahuel clicks on The button for login (completed)" width="1920"/>
+                <img src="c5365d8919c686ffa6a35c2b40d87543cab103baf893ca5f0539f9e62a85c6f4.png" title=" Nahuel go to the sectionChat Interno" width="1920"/>
+                <img src="c5365d8919c686ffa6a35c2b40d87543cab103baf893ca5f0539f9e62a85c6f4.png" title=" Nahuel open the side menu" width="1920"/>
+                <img src="8766fe2e8214a0bd5704e91fdbe7028fba98b23bf20293586159d531240774e9.png" title=" Nahuel clicks on The button for access to the tools menu" width="1920"/>
+                <img src="e4d11e2d05e186151ea798478d71d6eba130e8341e94ae82100026f9fed03178.png" title=" Nahuel clicks on The button for access to the tools menu (completed)" width="1920"/>
+                <img src="e4d11e2d05e186151ea798478d71d6eba130e8341e94ae82100026f9fed03178.png" title=" Nahuel open the side menu (completed)" width="1920"/>
+                <img src="e4d11e2d05e186151ea798478d71d6eba130e8341e94ae82100026f9fed03178.png" title=" Nahuel enters 'Chat Interno' into The search bar" width="1920"/>
+                <img src="49253b512f9fb4405b73d1eaa7149a8766fced4eadf1b05e4ad6553ac3315eca.png" title=" Nahuel enters 'Chat Interno' into The search bar (completed)" width="1920"/>
+                <img src="49253b512f9fb4405b73d1eaa7149a8766fced4eadf1b05e4ad6553ac3315eca.png" title=" Nahuel clicks on The button for go to the Intern Chat section" width="1920"/>
+                <img src="941b9ec7420442fa063fab932172e3f4797317c13f03e85bab05fff74979e76c.png" title=" Nahuel clicks on The button for go to the Intern Chat section (completed)" width="1920"/>
+                <img src="941b9ec7420442fa063fab932172e3f4797317c13f03e85bab05fff74979e76c.png" title=" Nahuel go to the sectionChat Interno (completed)" width="1920"/>
+                <img src="941b9ec7420442fa063fab932172e3f4797317c13f03e85bab05fff74979e76c.png" title=" Given Un agente que ingresa a la seccion de Chat Interno (completed)" width="1920"/>
+                <img src="c3596bb15c5dcb876cecf49574d2983ae40fdd24af51d9e300b55c21367f4da4.png" title=" When El agente modifica el grupo colocando un valor igual al limite de caracteres permitidos" width="1920"/>
+                <img src="c3596bb15c5dcb876cecf49574d2983ae40fdd24af51d9e300b55c21367f4da4.png" title=" Nahuel clicks on El boton que muestra las opciones del grupo" width="1920"/>
+                <img src="58290894265b1bde3bf524b1a1ca18e011a133deab49411db90ce080789b8aa3.png" title=" Nahuel clicks on El boton que muestra las opciones del grupo (completed)" width="1920"/>
+                <img src="58290894265b1bde3bf524b1a1ca18e011a133deab49411db90ce080789b8aa3.png" title=" Nahuel clicks on El boton que edita los valores del grupo" width="1920"/>
+                <img src="56ce104ff33246a9884ba331f7e67d488746803efc1b578bdcccbe530fb0e83d.png" title=" Nahuel clicks on El boton que edita los valores del grupo (completed)" width="1920"/>
+                <img src="56ce104ff33246a9884ba331f7e67d488746803efc1b578bdcccbe530fb0e83d.png" title=" Nahuel enters 'iPRPrObpEq517Di5OrncnrZoll3T85eVIdq7w9Ckna6RCJKbt2pe2B7nuHTA8YUk8Q05zH4gttn6nUZjT5KPUH7Ldpd2d9pOaddL1dWDDym0dn76C7QE4WhYJ9z4S6Qf' into La caja de texto para colocar la descripcion del grupo" width="1920"/>
+                <img src="d42feb2764ac89de044a62dfdd14502bd1b9f82dbdc7c9d99a03f830dce2dc10.png" title=" Nahuel enters 'iPRPrObpEq517Di5OrncnrZoll3T85eVIdq7w9Ckna6RCJKbt2pe2B7nuHTA8YUk8Q05zH4gttn6nUZjT5KPUH7Ldpd2d9pOaddL1dWDDym0dn76C7QE4WhYJ9z4S6Qf' into La caja de texto para colocar la descripcion del grupo (completed)" width="1920"/>
+                <img src="d42feb2764ac89de044a62dfdd14502bd1b9f82dbdc7c9d99a03f830dce2dc10.png" title=" Nahuel clicks on El boton para finalizar la creacion del grupo" width="1920"/>
+                <img src="da97eb2739808fff4e6c1f4e13bafcd9b8b74e7c2cb7fc61ae2b1892dc7add93.png" title=" Nahuel clicks on El boton para finalizar la creacion del grupo (completed)" width="1920"/>
+                <img src="da97eb2739808fff4e6c1f4e13bafcd9b8b74e7c2cb7fc61ae2b1892dc7add93.png" title=" When El agente modifica el grupo colocando un valor igual al limite de caracteres permitidos (completed)" width="1920"/>
+                <img src="ca40c42177879913f84d3003fcacbeb5e73e0b8a6757660e76df63560d7ccdb5.png" title=" Then El grupo se guarda con la nueva descripcion colocada" width="1920"/>
+                <img src="ca40c42177879913f84d3003fcacbeb5e73e0b8a6757660e76df63560d7ccdb5.png" title=" Nahuel should see El label que muestra la descripcion del grupo with text value that is equal to: &lt;&quot;iPRPrObpEq517Di5OrncnrZoll3T85eVIdq7w9Ckna6RCJKbt2pe2B7nuHTA8YUk8Q05zH4gttn6nUZjT5KPUH7Ldpd2d9pOaddL1dWDDym0dn76C7QE4WhYJ9z4S6Qf&quot;&gt;" width="1920"/>
+                <img src="ca40c42177879913f84d3003fcacbeb5e73e0b8a6757660e76df63560d7ccdb5.png" title=" Then El grupo se guarda con la nueva descripcion colocada (completed): <span class='success-color'>SUCCESS</span>" width="1920"/>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div id="beforefooter"></div>
+<div id="bottomfooter">
+    <span class="version">Serenity BDD version 3.6.12</span>
+</div>
+</body>
+</html>

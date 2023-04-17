@@ -1,0 +1,265 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Screenshots</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="bootstrap-icons/bootstrap-icons.css">
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.13.1/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.13.1/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.13.1/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/>
+<!--CHART.JS-->
+<script src="chartjs/chart.js"></script>
+<script src="chartjs/chartjs-plugin-datalabels@2.0.0"></script>
+<script src="chartjs/patternomaly.min.js"></script>
+<script>
+    // Register the plugin to all charts:
+    Chart.register(ChartDataLabels);
+</script>
+<!-- Nivo Slider -->
+<link rel="stylesheet" href="nivo-slider/3.2/nivo-slider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="nivo-slider/3.2/themes/default/default.css" type="text/css" media="screen" />
+<script src="nivo-slider/3.2/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+
+        var screenshotIndex = getUrlVars()["screenshot"];
+
+        $(window).load(function () {
+            $('#slider').nivoSlider({
+                startSlide: screenshotIndex,
+                effect: 'fade',
+                animSpeed: 200,
+                manualAdvance: true
+            });
+        });
+
+        $(window).keydown(function(e) {
+            switch(e.which) {
+                case 37:
+                    $('a.nivo-prevNav').click();
+                    break;
+                case 39:
+                    $('a.nivo-nextNav').click();
+                    break;
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">eXpand Automation</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+                <a href="index.html">Home</a>
+                > <span class="truncate-40"><a
+                    href="70d16003a21fe025772b6bee47d45f607733294bb54ac856cd325728bc1cfb01.html">Modificar Registros No Llames</a></span>
+                > <span class="truncate-60"><a
+                    href="cc1406dec3503be404191a91e80f52977cc671f27b736b6d7d5d79ba94b29a15.html">Modificar registro dejando el mismo valor que ya pose&iacute;a </a></span>
+                > Screenshots
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="bi bi-journal-check"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="bi bi-journal-text"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="dafb266f68444cb7f2451c923d70c1428ac45470c361842b818e6daa9bcd4fa8.html"><i class="bi bi-chat-text"></i> Themes</a>
+        </li>
+        <li >
+            <a href="7ea0a5e2d679b9deeda9910ae4a9bcd3a281e0d908303a9e16e486103e98880c.html"><i class="bi bi-chat-text"></i> Capabilities</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="bi bi-chat-text"></i> Features</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 14-04-2023 17:44</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+
+    <div id="contentbody">
+        <div class="titlebar">
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td>
+                            <div>
+                                <h3 class="discreet-story-header">
+                                    <i class="fs-2 bi bi-chat-left-quote large-icon"></i>
+                                    <span class="story-header-title">Modificar Registros No Llames </span>
+                                    <span class="badge tag-badge" style="">Feature</span>
+                                </h3>
+
+                                <div class="discreet-requirement-narrative-title">
+                                Como agente logueado en el sistema,<br />
+quiero poder modificar los registros de no llames,<br />
+para poder cambiar la utilidad que les damos
+                                </div>
+                            </div>
+
+                        </td>
+                        <td valign="top" align="right">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td colspan="2" class="test-title-bar">
+                            <span class="outcome-icon"><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon fa-2x' title='SUCCESS'></i></a></span>
+                            <span class="test-case-title">
+                                <span class="success-color">Modificar registro dejando el mismo valor que ya pose&iacute;a
+                                    <span class="related-issue-title"></span>
+                                </span>
+                            </span>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+
+
+    <div id="beforetable"></div>
+    <div id="contenttilttle">
+        <div class="slider-wrapper theme-default">
+            <div id="slider">
+                <img src="5dfebf6541f25dd248fd12606f2521a9d479a66182d1c435e157d0c41e18ffad.png" title=" Given Un agente que ingresa a la seccion de registros no llames" width="1920"/>
+                <img src="5dfebf6541f25dd248fd12606f2521a9d479a66182d1c435e157d0c41e18ffad.png" title=" Nahuel opens the Login pom" width="1920"/>
+                <img src="5dfebf6541f25dd248fd12606f2521a9d479a66182d1c435e157d0c41e18ffad.png" title=" Nahuel enters 'nahuel.silvera' into The input for the username" width="1920"/>
+                <img src="5d1b1de10bcf8cd1db3fdd3137ac2291e58ba5085af00b3e500b6ce0024e52f9.png" title=" Nahuel enters 'nahuel.silvera' into The input for the username (completed)" width="1920"/>
+                <img src="5d1b1de10bcf8cd1db3fdd3137ac2291e58ba5085af00b3e500b6ce0024e52f9.png" title=" Nahuel enters 'abcd1234' into The input for the password" width="1920"/>
+                <img src="f54e3679ed4c433bc458b14b0ef8325c4ecc1e35d84a3344ecefef9bc3fd5c43.png" title=" Nahuel enters 'abcd1234' into The input for the password (completed)" width="1920"/>
+                <img src="f54e3679ed4c433bc458b14b0ef8325c4ecc1e35d84a3344ecefef9bc3fd5c43.png" title=" Nahuel clicks on The button for login" width="1920"/>
+                <img src="b756a7363dc4bee704362adc1039d10672ccf3ed5505bf392aa7e0d9c9a55cef.png" title=" Nahuel clicks on The button for login (completed)" width="1920"/>
+                <img src="b756a7363dc4bee704362adc1039d10672ccf3ed5505bf392aa7e0d9c9a55cef.png" title=" Nahuel go to the sectionRegistro no llame" width="1920"/>
+                <img src="b756a7363dc4bee704362adc1039d10672ccf3ed5505bf392aa7e0d9c9a55cef.png" title=" Nahuel open the side menu" width="1920"/>
+                <img src="effaa5584cdefab970eef6ae54cda5166569cc3357ecbdee49f02b033314bbfb.png" title=" Nahuel clicks on The button for access to the tools menu" width="1920"/>
+                <img src="f5da1998a5eea3991e0e601908d533fb2b35e68f1266190d44b612f28e96b0fd.png" title=" Nahuel clicks on The button for access to the tools menu (completed)" width="1920"/>
+                <img src="f5da1998a5eea3991e0e601908d533fb2b35e68f1266190d44b612f28e96b0fd.png" title=" Nahuel open the side menu (completed)" width="1920"/>
+                <img src="f5da1998a5eea3991e0e601908d533fb2b35e68f1266190d44b612f28e96b0fd.png" title=" Nahuel enters 'Registro no llame' into The search bar" width="1920"/>
+                <img src="8405a90c3909805648e3771209bedeb69d1d6974b11e1d215e8c20175c08d5a2.png" title=" Nahuel enters 'Registro no llame' into The search bar (completed)" width="1920"/>
+                <img src="8405a90c3909805648e3771209bedeb69d1d6974b11e1d215e8c20175c08d5a2.png" title=" Nahuel clicks on The button for go to the no call register section" width="1920"/>
+                <img src="014965bbb74b0d9f6adc5f2db6ddec17116d64d2991d0a238c06b9871485d242.png" title=" Nahuel clicks on The button for go to the no call register section (completed)" width="1920"/>
+                <img src="014965bbb74b0d9f6adc5f2db6ddec17116d64d2991d0a238c06b9871485d242.png" title=" Nahuel go to the sectionRegistro no llame (completed)" width="1920"/>
+                <img src="014965bbb74b0d9f6adc5f2db6ddec17116d64d2991d0a238c06b9871485d242.png" title=" Given Un agente que ingresa a la seccion de registros no llames (completed)" width="1920"/>
+                <img src="0befce8e1d7e66a2135a325e8c8144c101690fff58e94f7319b345b3931b8516.png" title=" When El agente modifica el registro colocando el mismo numero que ya tenia" width="1920"/>
+                <img src="0befce8e1d7e66a2135a325e8c8144c101690fff58e94f7319b345b3931b8516.png" title=" Nahuel clicks on The button to show the register options" width="1920"/>
+                <img src="a4571ad4143a37952525e78f3353e9ab8d19014319b604653bc28959cd099944.png" title=" Nahuel clicks on The button to show the register options (completed)" width="1920"/>
+                <img src="a4571ad4143a37952525e78f3353e9ab8d19014319b604653bc28959cd099944.png" title=" Nahuel clicks on The button to modify the register" width="1920"/>
+                <img src="5969662fe06d16aef1962a5e98212ad29d291ea3cfabd7e6f61042b1dca952b7.png" title=" Nahuel clicks on The button to modify the register (completed)" width="1920"/>
+                <img src="5969662fe06d16aef1962a5e98212ad29d291ea3cfabd7e6f61042b1dca952b7.png" title=" Nahuel enters '421728' into The input to place the Number of the register" width="1920"/>
+                <img src="de1360efc114a329cbe1125cc5843a0d3058918add9cf5fcc7ee683678b7cfc7.png" title=" Nahuel enters '421728' into The input to place the Number of the register (completed)" width="1920"/>
+                <img src="de1360efc114a329cbe1125cc5843a0d3058918add9cf5fcc7ee683678b7cfc7.png" title=" Nahuel clicks on The button to finish the creation of the pause" width="1920"/>
+                <img src="d8f9d49e79e352a41e8b3e4791a7c979d1c01c40a165ebb5f26c99a16d1c4f58.png" title=" Nahuel clicks on The button to finish the creation of the pause (completed)" width="1920"/>
+                <img src="d8f9d49e79e352a41e8b3e4791a7c979d1c01c40a165ebb5f26c99a16d1c4f58.png" title=" When El agente modifica el registro colocando el mismo numero que ya tenia (completed)" width="1920"/>
+                <img src="23fe6dfb939f2ca114716a26ab9549ecf74307867be875ee3609fb4d7c829cfc.png" title=" Then El agente puede guardar correctamente el registro" width="1920"/>
+                <img src="23fe6dfb939f2ca114716a26ab9549ecf74307867be875ee3609fb4d7c829cfc.png" title=" Nahuel clicks on The button for use all filters" width="1920"/>
+                <img src="b2a14bcead283e83ef7a37a34f86dab405a64150b4396e2b2e9303c3f396ddb8.png" title=" Nahuel clicks on The button for use all filters (completed)" width="1920"/>
+                <img src="6e7c5318df9f9bbed2332f2102056349368c8b2f4ae6bf69421208ed2260198e.png" title=" Nahuel should see The label that show the number of the register  with text value that is equal to: &lt;&quot;421728&quot;&gt;" width="1920"/>
+                <img src="a682a77f92c936d9a3b11075be6226dbd496c914a0a37f153807bfedab329907.png" title=" Nahuel should see The label that show the number of the register  with text value that is equal to: &lt;&quot;421728&quot;&gt; (completed)" width="1920"/>
+                <img src="a682a77f92c936d9a3b11075be6226dbd496c914a0a37f153807bfedab329907.png" title=" Then El agente puede guardar correctamente el registro (completed): <span class='success-color'>SUCCESS</span>" width="1920"/>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div id="beforefooter"></div>
+<div id="bottomfooter">
+    <span class="version">Serenity BDD version 3.6.12</span>
+</div>
+</body>
+</html>

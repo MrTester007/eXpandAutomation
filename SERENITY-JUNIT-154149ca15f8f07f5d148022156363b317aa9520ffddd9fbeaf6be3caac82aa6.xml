@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="0" name="Funcionalidades generales de la seccion claves." skipped="0" tests="3" time="23.58" timestamp="2023-04-14 05:52:05"><testcase name="Buscar una clave por clave"/><testcase name="Buscar una clave por descripcion"/><testcase name="Buscar una clave inexistente"/></testsuite>

@@ -1,0 +1,6 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Agregar departamentos","Agregar departamento valido y con un pickup autoasignado","FAILURE","2023-04-14T17:19:58.7530156-03:00[America/Montevideo]","0.0","18.21"
+"Agregar departamentos","Crear un grupo que utilice el limite de caracteres permitidos y con pickup autoasignado","FAILURE","2023-04-14T17:20:17.7015192-03:00[America/Montevideo]","0.0","15.96"
+"Agregar departamentos","Agregar departamento con nombre duplicado y pickup autoseleccionado","FAILURE","2023-04-14T17:21:03.9374309-03:00[America/Montevideo]","0.0","10.64"
+"Importar departamentos","Importar un archivo con datos invalidos","FAILURE","2023-04-14T17:24:34.2977624-03:00[America/Montevideo]","0.0","12.98"
+"Importar departamentos","Importar un archivo con datos validos y pickup autoseleccionado","FAILURE","2023-04-14T17:24:47.971481-03:00[America/Montevideo]","0.0","22.48"

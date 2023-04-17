@@ -1,0 +1,3 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Eliminar departamentos","Eliminar un departamento sin vinculaciones","SUCCESS","2023-04-14T17:22:18.3307004-03:00[America/Montevideo]","0.0","9.72"
+"Eliminar departamentos","Eliminar un departamento con vinculaciones","SUCCESS","2023-04-14T17:22:28.7957171-03:00[America/Montevideo]","0.0","7.99"

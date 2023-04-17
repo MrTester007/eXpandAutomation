@@ -1,0 +1,6 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Importar registros no llames","Importar un archivo con formato invalido","SUCCESS","2023-04-14T17:45:21.2688674-03:00[America/Montevideo]","0.0","10.79"
+"Importar registros no llames","Importar un archivo con columnas faltantes","SUCCESS","2023-04-14T17:45:32.6865161-03:00[America/Montevideo]","0.0","10.89"
+"Importar registros no llames","Importar un archivo con columnas repetidas","SUCCESS","2023-04-14T17:45:44.2024405-03:00[America/Montevideo]","0.0","10.31"
+"Importar registros no llames","Importar un archivo con columnas sin nombre","SUCCESS","2023-04-14T17:46:09.4370508-03:00[America/Montevideo]","0.0","10.82"
+"Importar registros no llames","Importar un archivo con datos validos","SUCCESS","2023-04-14T17:46:31.6234426-03:00[America/Montevideo]","0.0","14.53"

@@ -1,0 +1,4 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Funcionalidades generales de la seccion departamentos.","Buscar un departamento por nombre por medio de la barra de busqueda","SUCCESS","2023-04-14T17:23:10.7259975-03:00[America/Montevideo]","0.0","6.91"
+"Funcionalidades generales de la seccion departamentos.","Buscar un departamento inexistente","SUCCESS","2023-04-14T17:23:18.0516736-03:00[America/Montevideo]","0.0","8.75"
+"Funcionalidades generales de la seccion departamentos.","Buscar un departamento usando la descripcion por medio la barra de busqueda","SUCCESS","2023-04-14T17:23:27.4355066-03:00[America/Montevideo]","0.0","8.49"

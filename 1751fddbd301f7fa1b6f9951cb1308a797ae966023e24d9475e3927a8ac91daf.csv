@@ -1,0 +1,6 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Modificar claves","Modificar clave correctamente","SUCCESS","2023-04-14T17:51:22.4764581-03:00[America/Montevideo]","0.0","7.73"
+"Modificar claves","Colocar una descripcion vacia","SUCCESS","2023-04-14T17:51:30.6327459-03:00[America/Montevideo]","0.0","7.49"
+"Modificar claves","Modificar clave dejando el mismo valor que ya tenia","SUCCESS","2023-04-14T17:51:38.5572416-03:00[America/Montevideo]","0.0","8.08"
+"Modificar claves","Modificar clave colocando un valor igual al limite maximo de caracteres","SUCCESS","2023-04-14T17:51:47.3703129-03:00[America/Montevideo]","0.0","8.5"
+"Modificar claves","Modificar una clave utilizando una descripcion que ya este en uso","SUCCESS","2023-04-14T17:51:56.5533892-03:00[America/Montevideo]","0.0","7.97"

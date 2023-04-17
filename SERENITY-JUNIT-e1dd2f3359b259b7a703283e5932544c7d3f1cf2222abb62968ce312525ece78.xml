@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="1" name="Eliminar localidades" skipped="0" tests="1" time="7.74" timestamp="2023-04-17 03:28:42"><testcase name="Eliminar una localidad"><failure message="&#13;&#10;Expected: an element that is not currently visible&#13;&#10;     but: the element identified by [[ChromeDriver: chrome on WINDOWS (f3310e280b5d596c8f41448bc0557784)] -&gt; xpath: //mat-table[1]/mat-row[1]/mat-cell[1]/div] [117] was not currently visible" type="java.lang.AssertionError">&#13;
+Expected: an element that is not currently visible&#13;
+     but: the element identified by [[ChromeDriver: chrome on WINDOWS (f3310e280b5d596c8f41448bc0557784)] -&gt; xpath: //mat-table[1]/mat-row[1]/mat-cell[1]/div] [117] was not currently visible</failure><system-err>&#13;
+Expected: an element that is not currently visible&#13;
+     but: the element identified by [[ChromeDriver: chrome on WINDOWS (f3310e280b5d596c8f41448bc0557784)] -&gt; xpath: //mat-table[1]/mat-row[1]/mat-cell[1]/div] [117] was not currently visible&#13;
+co.com.arbusta.certification.expand.stepdefinitions.administration.basic.localities.deletingLocalities_Steps.la_localidad_ya_no_es_visible_en_la_tabla(deletingLocalities_Steps.java:46)&#13;
+✽.La localidad ya no es visible en la tabla(classpath:features/administration/basic/localities/deleteLocalities.feature:6)&#13;
+</system-err></testcase></testsuite>

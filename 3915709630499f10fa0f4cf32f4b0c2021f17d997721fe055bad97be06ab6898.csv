@@ -1,0 +1,6 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Agregar grupos de chat interno","Crear grupo con datos validos","SUCCESS","2023-04-14T17:25:29.5297145-03:00[America/Montevideo]","0.0","8.17"
+"Agregar grupos de chat interno","Crear un grupo utilizando caracteres que no sean alfanumericos","SUCCESS","2023-04-14T17:25:38.3787204-03:00[America/Montevideo]","0.0","12.16"
+"Agregar grupos de chat interno","Crear un grupo que utilice el limite de caracteres permitidos","SUCCESS","2023-04-14T17:25:51.2386862-03:00[America/Montevideo]","0.0","8.78"
+"Agregar grupos de chat interno","Crear un grupo dejando el nombre vacio","SUCCESS","2023-04-14T17:26:00.6244318-03:00[America/Montevideo]","0.0","11.65"
+"Agregar grupos de chat interno","Crear un grupo utilizando valores de un grupo ya existente","SUCCESS","2023-04-14T17:26:12.7132759-03:00[America/Montevideo]","0.0","6.7"

@@ -1,0 +1,260 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Screenshots</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="bootstrap-icons/bootstrap-icons.css">
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.13.1/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.13.1/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.13.1/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/>
+<!--CHART.JS-->
+<script src="chartjs/chart.js"></script>
+<script src="chartjs/chartjs-plugin-datalabels@2.0.0"></script>
+<script src="chartjs/patternomaly.min.js"></script>
+<script>
+    // Register the plugin to all charts:
+    Chart.register(ChartDataLabels);
+</script>
+<!-- Nivo Slider -->
+<link rel="stylesheet" href="nivo-slider/3.2/nivo-slider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="nivo-slider/3.2/themes/default/default.css" type="text/css" media="screen" />
+<script src="nivo-slider/3.2/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+
+        var screenshotIndex = getUrlVars()["screenshot"];
+
+        $(window).load(function () {
+            $('#slider').nivoSlider({
+                startSlide: screenshotIndex,
+                effect: 'fade',
+                animSpeed: 200,
+                manualAdvance: true
+            });
+        });
+
+        $(window).keydown(function(e) {
+            switch(e.which) {
+                case 37:
+                    $('a.nivo-prevNav').click();
+                    break;
+                case 39:
+                    $('a.nivo-nextNav').click();
+                    break;
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">eXpand Automation</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+                <a href="index.html">Home</a>
+                > <span class="truncate-40"><a
+                    href="c78cb5c99e30594efe87774c313fe51a8bccb48bcfdf557b452188332a7acd41.html">Agregar Departamentos</a></span>
+                > <span class="truncate-60"><a
+                    href="c33f295adaddb5c5d5a07d7050b8537a8e8c2f0d3da0de3fbfc4fbd8479d47ab.html">Agregar departamento con caracteres invalidos y con pickup autoasignado </a></span>
+                > Screenshots
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="bi bi-journal-check"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="bi bi-journal-text"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="dafb266f68444cb7f2451c923d70c1428ac45470c361842b818e6daa9bcd4fa8.html"><i class="bi bi-chat-text"></i> Themes</a>
+        </li>
+        <li >
+            <a href="7ea0a5e2d679b9deeda9910ae4a9bcd3a281e0d908303a9e16e486103e98880c.html"><i class="bi bi-chat-text"></i> Capabilities</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="bi bi-chat-text"></i> Features</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 14-04-2023 17:20</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+
+    <div id="contentbody">
+        <div class="titlebar">
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td>
+                            <div>
+                                <h3 class="discreet-story-header">
+                                    <i class="fs-2 bi bi-chat-left-quote large-icon"></i>
+                                    <span class="story-header-title">Agregar Departamentos </span>
+                                    <span class="badge tag-badge" style="">Feature</span>
+                                </h3>
+
+                                <div class="discreet-requirement-narrative-title">
+                                Como agente registrado en el sistema, quiero crear departamentos para asignarlos a una tarea en especifico
+                                </div>
+                            </div>
+
+                        </td>
+                        <td valign="top" align="right">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td colspan="2" class="test-title-bar">
+                            <span class="outcome-icon"><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon fa-2x' title='SUCCESS'></i></a></span>
+                            <span class="test-case-title">
+                                <span class="success-color">Agregar departamento con caracteres invalidos y con pickup autoasignado
+                                    <span class="related-issue-title"></span>
+                                </span>
+                            </span>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+
+
+    <div id="beforetable"></div>
+    <div id="contenttilttle">
+        <div class="slider-wrapper theme-default">
+            <div id="slider">
+                <img src="5dfebf6541f25dd248fd12606f2521a9d479a66182d1c435e157d0c41e18ffad.png" title=" Given Un agente que ingresa a la seccion de departamentos" width="1920"/>
+                <img src="5dfebf6541f25dd248fd12606f2521a9d479a66182d1c435e157d0c41e18ffad.png" title=" Nahuel opens the Login pom" width="1920"/>
+                <img src="5dfebf6541f25dd248fd12606f2521a9d479a66182d1c435e157d0c41e18ffad.png" title=" Nahuel enters 'nahuel.silvera' into The input for the username" width="1920"/>
+                <img src="6135aa17e18fb2e7d8af67d537f618d714cdec225d8898c3d2ddef9322cd2452.png" title=" Nahuel enters 'nahuel.silvera' into The input for the username (completed)" width="1920"/>
+                <img src="6135aa17e18fb2e7d8af67d537f618d714cdec225d8898c3d2ddef9322cd2452.png" title=" Nahuel enters 'abcd1234' into The input for the password" width="1920"/>
+                <img src="859d2fdbc131417783e0d24de4dafabd1e8d04a259bec0d51d3a830cdde03ba4.png" title=" Nahuel enters 'abcd1234' into The input for the password (completed)" width="1920"/>
+                <img src="859d2fdbc131417783e0d24de4dafabd1e8d04a259bec0d51d3a830cdde03ba4.png" title=" Nahuel clicks on The button for login" width="1920"/>
+                <img src="1473649e27cacb4130598f6c59fb017b54f930d725af2146af5eb2a35505bb85.png" title=" Nahuel clicks on The button for login (completed)" width="1920"/>
+                <img src="1473649e27cacb4130598f6c59fb017b54f930d725af2146af5eb2a35505bb85.png" title=" Nahuel go to the sectionDepartamentos" width="1920"/>
+                <img src="1473649e27cacb4130598f6c59fb017b54f930d725af2146af5eb2a35505bb85.png" title=" Nahuel open the side menu" width="1920"/>
+                <img src="1a603d202f94f76d227efe0b2b3e0ed101f814c0148fce9eadd251f3440da2b9.png" title=" Nahuel clicks on The button for access to the tools menu" width="1920"/>
+                <img src="e402ed14af693434a1e2500b746c638cf95288ad7f98b49794bc19d2d58bcba1.png" title=" Nahuel clicks on The button for access to the tools menu (completed)" width="1920"/>
+                <img src="e402ed14af693434a1e2500b746c638cf95288ad7f98b49794bc19d2d58bcba1.png" title=" Nahuel open the side menu (completed)" width="1920"/>
+                <img src="e402ed14af693434a1e2500b746c638cf95288ad7f98b49794bc19d2d58bcba1.png" title=" Nahuel enters 'Departamentos' into The search bar" width="1920"/>
+                <img src="3e06706bbe233d16416863e956d93f046d67ccc2e1ba96dc63f5772ea77bf144.png" title=" Nahuel enters 'Departamentos' into The search bar (completed)" width="1920"/>
+                <img src="3e06706bbe233d16416863e956d93f046d67ccc2e1ba96dc63f5772ea77bf144.png" title=" Nahuel clicks on The button for go to the Departments section" width="1920"/>
+                <img src="984afafaa5946574189cc53a2e8f9d3321858eb05eaf4974b57db4c3529f958f.png" title=" Nahuel clicks on The button for go to the Departments section (completed)" width="1920"/>
+                <img src="984afafaa5946574189cc53a2e8f9d3321858eb05eaf4974b57db4c3529f958f.png" title=" Nahuel go to the sectionDepartamentos (completed)" width="1920"/>
+                <img src="984afafaa5946574189cc53a2e8f9d3321858eb05eaf4974b57db4c3529f958f.png" title=" Given Un agente que ingresa a la seccion de departamentos (completed)" width="1920"/>
+                <img src="ad2cbe7ffa51b311af4f18464000ff08c3409fc169dd2a554ccbc3fcac48ad0a.png" title=" When El agente intenta agregar un nuevo departamento con caracteres no permitidos y pickup autoasignado" width="1920"/>
+                <img src="ad2cbe7ffa51b311af4f18464000ff08c3409fc169dd2a554ccbc3fcac48ad0a.png" title=" Nahuel clicks on El boton para agregar nuevos departamentos" width="1920"/>
+                <img src="7dbd74fe900728b813fe43c9e1a7c4b16298908fa5a3792f7f634f2d01b894c4.png" title=" Nahuel clicks on El boton para agregar nuevos departamentos (completed)" width="1920"/>
+                <img src="7dbd74fe900728b813fe43c9e1a7c4b16298908fa5a3792f7f634f2d01b894c4.png" title=" Nahuel enters 'a&ntilde;a-es' into The text box for the name" width="1920"/>
+                <img src="43aca91f4487947e2d9785149e1ad477a0d76321019a383300b55b1fc16e384e.png" title=" Nahuel enters 'a&ntilde;a-es' into The text box for the name (completed)" width="1920"/>
+                <img src="43aca91f4487947e2d9785149e1ad477a0d76321019a383300b55b1fc16e384e.png" title=" Nahuel enters 'a&ntilde;a-{' into The text box for the description" width="1920"/>
+                <img src="d69089cd6b681be52748c4bcd8c78993dc598b41641557c96daa9c25bcf03a7b.png" title=" Nahuel enters 'a&ntilde;a-{' into The text box for the description (completed)" width="1920"/>
+                <img src="3bdf5c80f44380d9d6e1174de6300ed91c6a2a0ea13fa91accc867b505b77ca9.png" title=" Nahuel clicks on The text box for the name" width="1920"/>
+                <img src="1ea6803b884dcc16eb9e91aa966b12316c4c54ab8bd6a3af5b73232872345cf5.png" title=" Nahuel clicks on The text box for the name (completed)" width="1920"/>
+                <img src="1ea6803b884dcc16eb9e91aa966b12316c4c54ab8bd6a3af5b73232872345cf5.png" title=" When El agente intenta agregar un nuevo departamento con caracteres no permitidos y pickup autoasignado (completed)" width="1920"/>
+                <img src="22afb2486ff0ca360158557b09c5959ddbff0e2ca59f24574c6e36cebf836a0a.png" title=" Then El agente ve un mensaje de error y no puede agregar el departamento" width="1920"/>
+                <img src="22afb2486ff0ca360158557b09c5959ddbff0e2ca59f24574c6e36cebf836a0a.png" title=" Then El label que indica que el nombre tiene caracteres no alfanumericos should be an element that is visible" width="1920"/>
+                <img src="22afb2486ff0ca360158557b09c5959ddbff0e2ca59f24574c6e36cebf836a0a.png" title=" Then El agente ve un mensaje de error y no puede agregar el departamento (completed): <span class='success-color'>SUCCESS</span>" width="1920"/>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div id="beforefooter"></div>
+<div id="bottomfooter">
+    <span class="version">Serenity BDD version 3.6.12</span>
+</div>
+</body>
+</html>

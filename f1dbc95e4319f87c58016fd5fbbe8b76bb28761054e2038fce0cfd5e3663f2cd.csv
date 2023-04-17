@@ -1,0 +1,5 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Editar departamentos previamente creados","Editar el grupo colocando una descripcion nueva","SUCCESS","2023-04-14T17:22:37.2107923-03:00[America/Montevideo]","0.0","8.04"
+"Editar departamentos previamente creados","Editar el grupo colocando una descripcion que sea igual al limite de caracteres permitidos.","SUCCESS","2023-04-14T17:22:45.9344504-03:00[America/Montevideo]","0.0","7.66"
+"Editar departamentos previamente creados","Editar grupo dejando la misma descripción.","SUCCESS","2023-04-14T17:22:54.160745-03:00[America/Montevideo]","0.0","7.98"
+"Editar departamentos previamente creados","Editar grupo colocando una descripcion vacia","SUCCESS","2023-04-14T17:23:02.5398732-03:00[America/Montevideo]","0.0","7.73"

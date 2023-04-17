@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="1" name="Editar elementos de una lista simple" skipped="0" tests="3" time="31.56" timestamp="2023-04-14 05:32:38"><testcase name="Modificar campo valor con datos validos en elementos de una lista simple"/><testcase name="Modificar campo valor utilizando el limite de caracteres en elementos de una lista simple"/><testcase name="Modificar campo valor utilizando caracteres vacios en elementos de una lista simple"><failure message="&#13;&#10;Expected: an element that is visible&#13;&#10;     but: no matching element found by [El error que indica que el valor esta vacio located with: //mat-form-field[2]/div[1]/div[2]/div[1]/mat-error[1]/span[1]]" type="java.lang.AssertionError">&#13;
+Expected: an element that is visible&#13;
+     but: no matching element found by [El error que indica que el valor esta vacio located with: //mat-form-field[2]/div[1]/div[2]/div[1]/mat-error[1]/span[1]]</failure><system-err>&#13;
+Expected: an element that is visible&#13;
+     but: no matching element found by [El error que indica que el valor esta vacio located with: //mat-form-field[2]/div[1]/div[2]/div[1]/mat-error[1]/span[1]]&#13;
+co.com.arbusta.certification.expand.stepdefinitions.administration.basic.lists.ElementsOfSimpleLists.modifyElements_Steps.se_muestra_un_mensaje_de_error_indicando_que_el_campo_valor_posee_caracteres_vacios(modifyElements_Steps.java:60)&#13;
+✽.Se muestra un mensaje de error indicando que el campo valor posee caracteres vacios(classpath:features/administration/basic/lists/SimpleLists/editSimpleListsElements.feature:19)&#13;
+</system-err></testcase></testsuite>

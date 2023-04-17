@@ -1,0 +1,4 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Funcionalidades generales de la seccion localidades.","Buscar una localidad por nombre","SUCCESS","2023-04-14T17:41:18.8087901-03:00[America/Montevideo]","0.0","7.49"
+"Funcionalidades generales de la seccion localidades.","Buscar una localidad por prefijo","SUCCESS","2023-04-14T17:41:26.7348617-03:00[America/Montevideo]","0.0","7.16"
+"Funcionalidades generales de la seccion localidades.","Buscar una localidad inexistente","SUCCESS","2023-04-14T17:41:34.6595865-03:00[America/Montevideo]","0.0","9.3"

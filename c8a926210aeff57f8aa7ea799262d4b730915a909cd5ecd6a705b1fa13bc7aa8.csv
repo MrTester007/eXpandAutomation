@@ -1,0 +1,5 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Eliminar grupos de chat interno","Eliminar grupo","ERROR","2023-04-14T17:26:19.9516081-03:00[America/Montevideo]","0.0","6.9"
+"Eliminar grupos de chat interno","Eliminar grupo que contiene usuarios vinculados","ERROR","2023-04-14T17:26:27.3319813-03:00[America/Montevideo]","0.0","7.68"
+"Eliminar elementos de una lista simple","Eliminar un elemento de una lista simple","ERROR","2023-04-14T17:32:25.5479996-03:00[America/Montevideo]","0.0","12.44"
+"Importar listas simples","Importar un archivo con datos validos","ERROR","2023-04-14T17:34:42.1226225-03:00[America/Montevideo]","0.0","20.92"

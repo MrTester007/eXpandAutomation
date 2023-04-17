@@ -1,0 +1,4 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Editar elementos de una lista simple","Modificar campo valor con datos validos en elementos de una lista simple","SUCCESS","2023-04-14T17:32:38.3875693-03:00[America/Montevideo]","0.0","10.18"
+"Editar elementos de una lista simple","Modificar campo valor utilizando el limite de caracteres en elementos de una lista simple","SUCCESS","2023-04-14T17:32:49.2952522-03:00[America/Montevideo]","0.0","10.67"
+"Editar elementos de una lista simple","Modificar campo valor utilizando caracteres vacios en elementos de una lista simple","FAILURE","2023-04-14T17:33:00.4475038-03:00[America/Montevideo]","0.0","10.72"

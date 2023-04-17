@@ -1,0 +1,277 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Screenshots</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="bootstrap-icons/bootstrap-icons.css">
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.13.1/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.13.1/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.13.1/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/>
+<!--CHART.JS-->
+<script src="chartjs/chart.js"></script>
+<script src="chartjs/chartjs-plugin-datalabels@2.0.0"></script>
+<script src="chartjs/patternomaly.min.js"></script>
+<script>
+    // Register the plugin to all charts:
+    Chart.register(ChartDataLabels);
+</script>
+<!-- Nivo Slider -->
+<link rel="stylesheet" href="nivo-slider/3.2/nivo-slider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="nivo-slider/3.2/themes/default/default.css" type="text/css" media="screen" />
+<script src="nivo-slider/3.2/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+
+        var screenshotIndex = getUrlVars()["screenshot"];
+
+        $(window).load(function () {
+            $('#slider').nivoSlider({
+                startSlide: screenshotIndex,
+                effect: 'fade',
+                animSpeed: 200,
+                manualAdvance: true
+            });
+        });
+
+        $(window).keydown(function(e) {
+            switch(e.which) {
+                case 37:
+                    $('a.nivo-prevNav').click();
+                    break;
+                case 39:
+                    $('a.nivo-nextNav').click();
+                    break;
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">eXpand Automation</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+                <a href="index.html">Home</a>
+                > <span class="truncate-40"><a
+                    href="e3535228a2f47d7de46369eb684e906c202903f01268e80cf133af0baed515f3.html">Agregar Elementos De Una Lista Simple</a></span>
+                > <span class="truncate-60"><a
+                    href="38fda134498d38587c8a043491a22468c8d9a8cd4c77188dcd906c91303ecc59.html">Crear un elemento de lista simple utilizando un valor ya existente </a></span>
+                > Screenshots
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="bi bi-journal-check"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="bi bi-journal-text"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="dafb266f68444cb7f2451c923d70c1428ac45470c361842b818e6daa9bcd4fa8.html"><i class="bi bi-chat-text"></i> Themes</a>
+        </li>
+        <li >
+            <a href="7ea0a5e2d679b9deeda9910ae4a9bcd3a281e0d908303a9e16e486103e98880c.html"><i class="bi bi-chat-text"></i> Capabilities</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="bi bi-chat-text"></i> Features</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 14-04-2023 17:32</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+
+    <div id="contentbody">
+        <div class="titlebar">
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td>
+                            <div>
+                                <h3 class="discreet-story-header">
+                                    <i class="fs-2 bi bi-chat-left-quote large-icon"></i>
+                                    <span class="story-header-title">Agregar Elementos De Una Lista Simple </span>
+                                    <span class="badge tag-badge" style="">Feature</span>
+                                </h3>
+
+                                <div class="discreet-requirement-narrative-title">
+                                Como agente registrado en el sistema quiero poder agregar elementos a una lista simple.
+                                </div>
+                            </div>
+
+                        </td>
+                        <td valign="top" align="right">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td colspan="2" class="test-title-bar">
+                            <span class="outcome-icon"><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon fa-2x' title='SUCCESS'></i></a></span>
+                            <span class="test-case-title">
+                                <span class="success-color">Crear un elemento de lista simple utilizando un valor ya existente
+                                    <span class="related-issue-title"></span>
+                                </span>
+                            </span>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+
+
+    <div id="beforetable"></div>
+    <div id="contenttilttle">
+        <div class="slider-wrapper theme-default">
+            <div id="slider">
+                <img src="5dfebf6541f25dd248fd12606f2521a9d479a66182d1c435e157d0c41e18ffad.png" title=" Given Un agente que ingresa a la seccion de elementos de una lista simple" width="1920"/>
+                <img src="5dfebf6541f25dd248fd12606f2521a9d479a66182d1c435e157d0c41e18ffad.png" title=" Nahuel opens the Login pom" width="1920"/>
+                <img src="5dfebf6541f25dd248fd12606f2521a9d479a66182d1c435e157d0c41e18ffad.png" title=" Nahuel enters 'nahuel.silvera' into The input for the username" width="1920"/>
+                <img src="b0759c89ebffcc53671d3439642092c3e47c366cfb65b8b24fe68a9cbc508e8f.png" title=" Nahuel enters 'nahuel.silvera' into The input for the username (completed)" width="1920"/>
+                <img src="b0759c89ebffcc53671d3439642092c3e47c366cfb65b8b24fe68a9cbc508e8f.png" title=" Nahuel enters 'abcd1234' into The input for the password" width="1920"/>
+                <img src="a26a42220230fc82fd4d2e5b821fc00e37beba086405c5ed8cd98f37e30a3873.png" title=" Nahuel enters 'abcd1234' into The input for the password (completed)" width="1920"/>
+                <img src="a26a42220230fc82fd4d2e5b821fc00e37beba086405c5ed8cd98f37e30a3873.png" title=" Nahuel clicks on The button for login" width="1920"/>
+                <img src="74c27b8115551910809acda980c9377c3e402232181e28147d40447b086d7636.png" title=" Nahuel clicks on The button for login (completed)" width="1920"/>
+                <img src="74c27b8115551910809acda980c9377c3e402232181e28147d40447b086d7636.png" title=" Nahuel go to the sectionListas" width="1920"/>
+                <img src="74c27b8115551910809acda980c9377c3e402232181e28147d40447b086d7636.png" title=" Nahuel open the side menu" width="1920"/>
+                <img src="78898af1c1b48f595e44791cbf76195ff9f66674a8bf352f673d8cb16bafaa42.png" title=" Nahuel clicks on The button for access to the tools menu" width="1920"/>
+                <img src="d039e796c70a31e13d54cf8ad6d7a01e5ad43afdf4091f1c4ec27237813dfc6a.png" title=" Nahuel clicks on The button for access to the tools menu (completed)" width="1920"/>
+                <img src="d039e796c70a31e13d54cf8ad6d7a01e5ad43afdf4091f1c4ec27237813dfc6a.png" title=" Nahuel open the side menu (completed)" width="1920"/>
+                <img src="d039e796c70a31e13d54cf8ad6d7a01e5ad43afdf4091f1c4ec27237813dfc6a.png" title=" Nahuel enters 'Listas' into The search bar" width="1920"/>
+                <img src="67094537545bb94859138a94518f79df2f35cd47c9f52e9f78a193c6bbdffef5.png" title=" Nahuel enters 'Listas' into The search bar (completed)" width="1920"/>
+                <img src="67094537545bb94859138a94518f79df2f35cd47c9f52e9f78a193c6bbdffef5.png" title=" Nahuel clicks on The button for go to the lists section" width="1920"/>
+                <img src="d56ed55644cbd5d17bc799771791887d75967f590abc18d7c4fff84f22005c71.png" title=" Nahuel clicks on The button for go to the lists section (completed)" width="1920"/>
+                <img src="d56ed55644cbd5d17bc799771791887d75967f590abc18d7c4fff84f22005c71.png" title=" Nahuel go to the sectionListas (completed)" width="1920"/>
+                <img src="d56ed55644cbd5d17bc799771791887d75967f590abc18d7c4fff84f22005c71.png" title=" Nahuel go to the simple list section" width="1920"/>
+                <img src="c29b27071e531255e753aac0078d87f1d10b524cab9ad758b10e09f0625e1c01.png" title=" Nahuel clicks on El boton para ingresar a los filtros" width="1920"/>
+                <img src="798ccc10fbbb5d9f06bfa7c3f4cba686fe1c26415262ad899113429445f6cd8e.png" title=" Nahuel clicks on El boton para ingresar a los filtros (completed)" width="1920"/>
+                <img src="798ccc10fbbb5d9f06bfa7c3f4cba686fe1c26415262ad899113429445f6cd8e.png" title=" Drop down mat select input" width="1920"/>
+                <img src="b875f37f05c7348e2e243968de9e7e82306237ce9e4269ed1d8611a208e4b3a8.png" title=" Nahuel clicks on El dropdown para seleccionar el tipo de filtro" width="1920"/>
+                <img src="da4a71062be15061fa42ca623a6ef0b08aff6987031d41818df9af3abb8bda56.png" title=" Nahuel clicks on El dropdown para seleccionar el tipo de filtro (completed)" width="1920"/>
+                <img src="da4a71062be15061fa42ca623a6ef0b08aff6987031d41818df9af3abb8bda56.png" title=" Nahuel clicks on La opcion que contiene el dropdown" width="1920"/>
+                <img src="fafc34f2aefb27fc0881ac23284dcf4c70214288f9142c7de9b525e79731ef11.png" title=" Nahuel clicks on La opcion que contiene el dropdown (completed)" width="1920"/>
+                <img src="fafc34f2aefb27fc0881ac23284dcf4c70214288f9142c7de9b525e79731ef11.png" title=" Drop down mat select input (completed)" width="1920"/>
+                <img src="fafc34f2aefb27fc0881ac23284dcf4c70214288f9142c7de9b525e79731ef11.png" title=" Nahuel clicks on El boton para aplicar los filtros" width="1920"/>
+                <img src="6e236ba8bf75b56deb326d867d9226a5635827665d80861ca4f108eaa5418409.png" title=" Nahuel clicks on El boton para aplicar los filtros (completed)" width="1920"/>
+                <img src="6e236ba8bf75b56deb326d867d9226a5635827665d80861ca4f108eaa5418409.png" title=" Nahuel clicks on El boton para mostrar las opciones de cada lista" width="1920"/>
+                <img src="9da5b0e11135cadc5e620f1bbf016042b6066a05366c867e57a7e75250e3b42e.png" title=" Nahuel clicks on El boton para mostrar las opciones de cada lista (completed)" width="1920"/>
+                <img src="9da5b0e11135cadc5e620f1bbf016042b6066a05366c867e57a7e75250e3b42e.png" title=" Nahuel clicks on El boton para editar los elementos de una lista" width="1920"/>
+                <img src="6d74a2f370f7f1df4f6f7b0f95f2d868cdd4fa4b9a74a1380555f39203f6fc41.png" title=" Nahuel clicks on El boton para editar los elementos de una lista (completed)" width="1920"/>
+                <img src="6d74a2f370f7f1df4f6f7b0f95f2d868cdd4fa4b9a74a1380555f39203f6fc41.png" title=" Nahuel go to the simple list section (completed)" width="1920"/>
+                <img src="6d74a2f370f7f1df4f6f7b0f95f2d868cdd4fa4b9a74a1380555f39203f6fc41.png" title=" Given Un agente que ingresa a la seccion de elementos de una lista simple (completed)" width="1920"/>
+                <img src="d6fb6a3740119ecc0ab103a3b274174aafcb7f489c938d95adb592cffb3249a1.png" title=" When El agente agrega un nuevo elemento utilizando un valor clave ya en uso" width="1920"/>
+                <img src="d6fb6a3740119ecc0ab103a3b274174aafcb7f489c938d95adb592cffb3249a1.png" title=" Nahuel clicks on The button for the adding of elements" width="1920"/>
+                <img src="1bd12146ab72536665278e51929d6494b53269c83a87b0b4084defc3a0d6372d.png" title=" Nahuel clicks on The button for the adding of elements (completed)" width="1920"/>
+                <img src="1bd12146ab72536665278e51929d6494b53269c83a87b0b4084defc3a0d6372d.png" title=" Nahuel enters 'DQl2' into Input for the Key" width="1920"/>
+                <img src="b7c75a795a58691099d5ebdb12ef40465c60c34ef46fe8888a2212fd83f11b7d.png" title=" Nahuel enters 'DQl2' into Input for the Key (completed)" width="1920"/>
+                <img src="b7c75a795a58691099d5ebdb12ef40465c60c34ef46fe8888a2212fd83f11b7d.png" title=" Nahuel enters 'DQl2' into Input for the Value" width="1920"/>
+                <img src="5aa117a40761633967c62d0b257e33c0ffc86c9f8bc534508c85ed48a19ebbf9.png" title=" Nahuel enters 'DQl2' into Input for the Value (completed)" width="1920"/>
+                <img src="5aa117a40761633967c62d0b257e33c0ffc86c9f8bc534508c85ed48a19ebbf9.png" title=" Nahuel clicks on The button to finish the creation of the element" width="1920"/>
+                <img src="0c65937c7e588d1c09b03b073a01f0b0fa3e5be8133b644e286bddab418bc4ad.png" title=" Nahuel clicks on The button to finish the creation of the element (completed)" width="1920"/>
+                <img src="0c65937c7e588d1c09b03b073a01f0b0fa3e5be8133b644e286bddab418bc4ad.png" title=" When El agente agrega un nuevo elemento utilizando un valor clave ya en uso (completed)" width="1920"/>
+                <img src="b11387fa46aa60a23bcdbcf6ce6cfc98664289fc326bfe4a33f183aa8a4c5784.png" title=" Then Se muestra un mensaje de error que indica que el valor clave ya esta en uso" width="1920"/>
+                <img src="b11387fa46aa60a23bcdbcf6ce6cfc98664289fc326bfe4a33f183aa8a4c5784.png" title=" Then El error que indica que la key ya existe should be an element that is visible" width="1920"/>
+                <img src="96de6b8da5ff57ec5e1a27c7448e568f34f7d9c44172b17bd1a5a6b5ca51723f.png" title=" Then El error que indica que la key ya existe should be an element that is visible (completed)" width="1920"/>
+                <img src="96de6b8da5ff57ec5e1a27c7448e568f34f7d9c44172b17bd1a5a6b5ca51723f.png" title=" Then Se muestra un mensaje de error que indica que el valor clave ya esta en uso (completed): <span class='success-color'>SUCCESS</span>" width="1920"/>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div id="beforefooter"></div>
+<div id="bottomfooter">
+    <span class="version">Serenity BDD version 3.6.12</span>
+</div>
+</body>
+</html>
