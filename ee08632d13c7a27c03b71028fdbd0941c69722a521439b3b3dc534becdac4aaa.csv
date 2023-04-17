@@ -1,6 +1,0 @@
-"Story","Title","Result","Date","Stability","Duration (s)"
-"Funcionalidades generales de la seccion registro no llame","Buscar un registro por numero","SUCCESS","2023-03-07T15:34:15.2377028-03:00[America/Montevideo]","0.0","7.97"
-"Funcionalidades generales de la seccion registro no llame","Buscar un registro inexistente","SUCCESS","2023-03-07T15:34:24.6666004-03:00[America/Montevideo]","0.0","10.23"
-"Funcionalidades generales de la seccion registro no llame","Organizar grupos por Numero","PENDING","2023-03-07T15:34:36.2796538-03:00[America/Montevideo]","0.0","6.66"
-"Funcionalidades generales de la seccion registro no llame","Organizar grupos por fecha de creacion","PENDING","2023-03-07T15:34:43.4662527-03:00[America/Montevideo]","0.0","6.73"
-"Funcionalidades generales de la seccion registro no llame","Organizar grupos por fecha de actualizacion","PENDING","2023-03-07T15:34:51.4862474-03:00[America/Montevideo]","0.0","6.94"

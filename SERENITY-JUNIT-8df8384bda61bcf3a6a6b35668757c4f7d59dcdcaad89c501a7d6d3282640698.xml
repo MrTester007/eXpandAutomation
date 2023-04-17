@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="1" name="Agregar claves" skipped="0" tests="4" time="47.48" timestamp="2023-03-07 03:41:36"><testcase name="Crear clave con datos validos"/><testcase name="Crear una clave utilizando caracteres especiales"><failure message="&#13;&#10;Expected: an element that is visible&#13;&#10;     but: no matching element found by [El mensaje de error que indica que solo se permiten caracteres alfanumericos located with: //strong[contains(text(),'Sólo se permiten caracteres alfanuméricos')]]" type="java.lang.AssertionError">&#13;
-Expected: an element that is visible&#13;
-     but: no matching element found by [El mensaje de error que indica que solo se permiten caracteres alfanumericos located with: //strong[contains(text(),'Sólo se permiten caracteres alfanuméricos')]]</failure><system-err>&#13;
-Expected: an element that is visible&#13;
-     but: no matching element found by [El mensaje de error que indica que solo se permiten caracteres alfanumericos located with: //strong[contains(text(),'Sólo se permiten caracteres alfanuméricos')]]&#13;
-co.com.arbusta.certification.expand.stepdefinitions.administration.basic.internChat.addGroups_Steps.se_muestra_un_mensaje_de_error_adecuado_indicando_que_no_se_pueden_utilizar_valores_alfanumericos(addGroups_Steps.java:81)&#13;
-✽.Se muestra un mensaje de error adecuado indicando que no se pueden utilizar valores alfanumericos(classpath:features/administration/system/keys/addKeys.feature:11)&#13;
-</system-err></testcase><testcase name="Crear una clave que utilice el limite de caracteres permitidos"/><testcase name="Crear una clave dejando la descripcion vacia"/></testsuite>

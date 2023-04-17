@@ -1,6 +1,0 @@
-"Story","Title","Result","Date","Stability","Duration (s)"
-"Agregar localidades","Crear localidad valida","SUCCESS","2023-03-07T15:27:31.6588207-03:00[America/Montevideo]","0.0","11.03"
-"Agregar localidades","Crear una localidad utilizando caracteres invalidos en el prefijo","SUCCESS","2023-03-07T15:27:43.4096758-03:00[America/Montevideo]","0.0","13.89"
-"Agregar localidades","Crear una localidad utilizando campos vacios","SUCCESS","2023-03-07T15:27:58.0393797-03:00[America/Montevideo]","0.0","13.84"
-"Agregar localidades","Crear una localidad utilizando valores iguales al limite permitido","SUCCESS","2023-03-07T15:28:13.4116129-03:00[America/Montevideo]","0.0","11.97"
-"Agregar localidades","Crear una localidad utilizando un prefijo ya en uso","SUCCESS","2023-03-07T15:28:26.989975-03:00[America/Montevideo]","0.0","10.44"
